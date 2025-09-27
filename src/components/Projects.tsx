@@ -68,38 +68,38 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="mt-10" id="Projects">
+        <div className="mt-6 sm:mt-8 lg:mt-10 px-4 sm:px-6 lg:px-8" id="Projects">
             <Title title="Mes Projets" />
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
                 {projects.map((project) => (
-                    <div key={project.id} className="modern-card p-6 h-fit rounded-2xl modern-glow modern-hover modern-border section-modern">
+                    <div key={project.id} className="modern-card p-4 sm:p-6 h-fit rounded-2xl modern-glow modern-hover modern-border section-modern">
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full rounded-xl h-56 object-cover border border-white/10"
+                            className="w-full rounded-xl h-48 sm:h-56 object-cover border border-white/10"
                         />
                         <div>
-                            <h1 className="my-3 font-bold text-xl modern-gradient-text">
+                            <h1 className="my-3 font-bold text-lg sm:text-xl modern-gradient-text">
                                 {project.title}
                             </h1>
-                            <p className="text-sm text-base-content/70 leading-relaxed">{project.description}</p>
+                            <p className="text-xs sm:text-sm text-base-content/70 leading-relaxed">{project.description}</p>
 
                         </div>
-                        <div className="flex flex-wrap gap-2 my-4">
+                        <div className="flex flex-wrap gap-1 sm:gap-2 my-3 sm:my-4">
                             {project.technologies.map((tech, index) => (
-                                <span key={index} className="badge-modern badge badge-sm px-3 py-2 font-medium">
+                                <span key={index} className="badge-modern badge badge-sm px-2 sm:px-3 py-1 sm:py-2 font-medium text-xs">
                                     {tech}
                                 </span>
                             ))}
                         </div>
                         <div className="flex gap-2">
-                            <a className="btn-modern btn flex-1" href={project.demoLink}>
+                            <a className="btn-modern btn flex-1 text-sm" href={project.demoLink}>
                                 Demo
-                                <Video className="w-4" />
+                                <Video className="w-3 sm:w-4" />
                             </a>
 
-                            <a className="btn btn-outline btn-primary w-16 backdrop-blur-sm" href={project.repoLink}>
-                                <Github className="w-4" />
+                            <a className="btn btn-outline btn-primary w-12 sm:w-16 backdrop-blur-sm" href={project.repoLink}>
+                                <Github className="w-3 sm:w-4" />
                             </a>
                         </div>
                     </div>

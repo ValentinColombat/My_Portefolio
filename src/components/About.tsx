@@ -25,14 +25,14 @@ const aboutSections = [
 
 const About = () => {
     return (
-        <div className="relative py-20 md:py-32" id="About">
+        <div className="relative pt-2 md:pt-2 pb-20 md:pb-32" id="About">
             
             {/* Container principal avec glassmorphism */}
-            <div className="container mx-auto px-8 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <Title title="À propos" />
                 
-                <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto mt-20">
+                <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto mt-12 sm:mt-16 lg:mt-20">
                     
                     {/* Image avec effet moderne */}
                     <div className="order-2 md:order-1 flex justify-start">
@@ -49,7 +49,7 @@ const About = () => {
                     </div>
 
                     {/* Cartes de compétences */}
-                    <div className="order-1 md:order-2 space-y-10">
+                    <div className="order-1 md:order-2 space-y-6 sm:space-y-8 lg:space-y-10">
                         {aboutSections.map((section, index) => (
                             <div key={section.id} className="about-card group">
                                 

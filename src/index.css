@@ -671,3 +671,54 @@ body {
         text-align: center;
     }
 }
+
+/* Responsive utilities */
+@media (max-width: 475px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajustements pour très petits écrans */
+  .hero-card {
+    max-width: 280px;
+  }
+  
+  .modern-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Optimisations pour mobile */
+  .floating-element-delayed,
+  .floating-element-slow {
+    display: none; /* Masquer les éléments décoratifs sur mobile pour les performances */
+  }
+  
+  .navbar-modern {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Optimisations pour tablettes */
+  .about-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Ajustements de taille de texte responsive */
+@media (max-width: 475px) {
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+}

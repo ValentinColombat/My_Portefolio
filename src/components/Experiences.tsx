@@ -69,44 +69,44 @@ const experiences = [
 
 const Experiences = () => {
     return (
-        <div id="Experiences">
+        <div id="Experiences" className="relative pt-2 md:pt-2 pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
             <Title title="Expériences" />
-            <div className="flex  flex-col-reverse md:flex-row justify-center items-center">
-                <div className="flex flex-wrap gap-4  justify-center items-center md:w-1/3 mt-4 md:mt-0">
+            <div className="flex flex-col-reverse lg:flex-row justify-center items-center max-w-7xl mx-auto">
+                <div className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center lg:w-1/3 mt-6 lg:mt-0">
                     {skills.map((skill) => (
-                        <div key={skill.id} className=" flex justify-center items-center flex-col">
-                            <div className="w-24 h-24 p-2 rounded-full border-2 border-accent">
+                        <div key={skill.id} className="flex justify-center items-center flex-col">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 p-2 rounded-full border-2 border-accent">
                                 <img src={skill.image} alt={skill.name}
                                     className="object-cover rounded-full h-full w-full"
                                 />
                             </div>
-                            <span className="mt-2 text-sm">{skill.name}</span>
+                            <span className="mt-2 text-xs sm:text-sm text-center">{skill.name}</span>
                         </div>
                     ))}
                 </div>
 
-                <div className="md:ml-4 flex flex-col space-y-4">
+                <div className="lg:ml-4 flex flex-col space-y-4 w-full lg:w-2/3">
                     {experiences.map((expericence) => (
                         <div
                             key={expericence.id}
-                            className="flex flex-col bg-base-200 p-5 rounded-xl shadow-lg"
+                            className="flex flex-col bg-base-200 p-4 sm:p-5 rounded-xl shadow-lg"
                         >
                             <div className="flex items-center">
                                 <img
                                     src={expericence.image}
                                     alt={expericence.company}
-                                    className="object-cover h-10 w-10"
+                                    className="object-cover h-8 w-8 sm:h-10 sm:w-10 rounded"
                                 />
-                                <div className="ml-4">
-                                    <h1 className="text-xl text-accent font-bold">
-                                        {expericence.role} , {expericence.company}
+                                <div className="ml-3 sm:ml-4 flex-1">
+                                    <h1 className="text-base sm:text-lg lg:text-xl text-accent font-bold break-words">
+                                        {expericence.role}, {expericence.company}
                                     </h1>
-                                    <span className="text-sm">{expericence.period}</span>
+                                    <span className="text-xs sm:text-sm text-gray-600">{expericence.period}</span>
                                 </div>
                             </div>
-                            <ul className="list-disc ml-16 mt-2">
+                            <ul className="list-disc ml-8 sm:ml-12 lg:ml-16 mt-2 space-y-1">
                                 {expericence.description.map((desc, index) => (
-                                    <li key={index}>
+                                    <li key={index} className="text-sm sm:text-base">
                                         {desc}
                                     </li>
                                 ))}

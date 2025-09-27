@@ -14,13 +14,16 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className={`navbar-modern flex justify-center md:justify-between items-center px-6 py-4 sticky top-4 z-50 mx-4 rounded-2xl ${isScrolled ? 'scrolled' : ''}`}>
+        <div className={`navbar-modern flex justify-center md:justify-between items-center px-4 sm:px-6 py-3 sm:py-4 sticky top-2 sm:top-4 z-50 mx-2 sm:mx-4 rounded-2xl ${isScrolled ? 'scrolled' : ''}`}>
             <a href="#"
-                className="flex items-center font-bold text-3xl md:text-xl transition-all duration-300 hover:scale-[1.02]"
+                className="flex items-center font-bold text-xl sm:text-2xl md:text-xl transition-all duration-300 hover:scale-[1.02]"
             >
-                <Container className="mr-3 text-accent drop-shadow-lg" />
-                VALENTIN 
-                <span className="modern-gradient-text ml-1">COLOMBAT</span>
+                <Container className="mr-2 sm:mr-3 text-accent drop-shadow-lg w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="hidden sm:inline">VALENTIN</span>
+                <span className="sm:hidden">Valentin</span>
+                <span className="modern-gradient-text ml-1">
+                    <span className="hidden sm:inline">COLOMBAT</span>
+                </span>
             </a>
 
             <ul className="hidden md:flex space-x-2">

@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react"
-import img from '../assets/projects/img.jpg'
+import img from '../assets/projects/photo.jpg'
 
 const Home = () => {
     return (

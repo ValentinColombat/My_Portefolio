@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react"
-import img from '../assets/projects/photo.png'
+import img from '../assets/projects/test 11.png'
 
 const Home = () => {
     return (
@@ -80,10 +80,38 @@ const Home = () => {
                             <div className="relative z-10">
                                 {/* Explosion de formes géométriques en arrière-plan - côté gauche uniquement */}
                                 <div className="absolute inset-0 -z-20">
+                                    
+                                    {/* Formes qui passent derrière l'image (fond transparent) */}
+                                    <div className="absolute inset-0 -z-30">
+                                        {/* Cercles en mouvement lent derrière l'image */}
+                                        <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-gradient-to-br from-orange-400/35 to-amber-400/35 rounded-full opacity-40 animate-pulse blur-sm" style={{animationDuration: '12s', animationDelay: '1s'}}></div>
+                                        <div className="absolute bottom-1/3 left-1/3 w-18 h-18 bg-gradient-to-br from-green-400/30 to-emerald-400/30 rounded-full opacity-35 animate-pulse blur-sm" style={{animationDuration: '15s', animationDelay: '3s'}}></div>
+                                        <div className="absolute top-1/2 left-1/2 w-22 h-22 bg-gradient-to-br from-purple-400/25 to-violet-400/25 rounded-full opacity-30 animate-pulse blur-sm" style={{animationDuration: '18s', animationDelay: '2s'}}></div>
+                                        
+                                        {/* Triangles rotatifs derrière l'image */}
+                                        <div className="absolute top-1/3 left-2/5 w-0 h-0 border-l-[25px] border-r-[25px] border-b-[40px] border-l-transparent border-r-transparent border-b-orange-400/40 opacity-35 animate-spin blur-sm" style={{animationDuration: '20s', animationDelay: '4s'}}></div>
+                                        <div className="absolute bottom-1/4 left-1/4 w-0 h-0 border-l-[22px] border-r-[22px] border-b-[38px] border-l-transparent border-r-transparent border-b-green-400/45 opacity-30 animate-spin blur-sm" style={{animationDuration: '25s', animationDirection: 'reverse', animationDelay: '1s'}}></div>
+                                        
+                                        {/* Carrés en rotation lente derrière l'image */}
+                                        <div className="absolute top-2/3 left-1/3 w-16 h-16 bg-gradient-to-br from-purple-300/30 to-indigo-400/30 rotate-45 opacity-35 animate-spin blur-sm" style={{animationDuration: '30s', animationDelay: '2s'}}></div>
+                                        <div className="absolute top-1/4 left-3/5 w-14 h-14 bg-gradient-to-br from-orange-300/35 to-red-400/35 rotate-12 opacity-30 animate-pulse blur-sm" style={{animationDuration: '16s', animationDelay: '5s'}}></div>
+                                        
+                                        {/* Hexagones derrière l'image */}
+                                        <div className="absolute bottom-1/2 left-1/4 w-14 h-14 bg-gradient-to-br from-green-400/35 to-teal-500/35 opacity-35 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)', animationDelay: '3s', animationDuration: '22s'}}></div>
+                                        <div className="absolute top-3/4 left-1/2 w-12 h-12 bg-gradient-to-br from-purple-400/30 to-violet-400/30 opacity-30 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)', animationDelay: '6s', animationDuration: '26s'}}></div>
+                                        
+                                        {/* Particules flottantes derrière l'image */}
+                                        <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-orange-300/40 rounded-full opacity-25 animate-pulse blur-sm" style={{animationDelay: '2s', animationDuration: '14s'}}></div>
+                                        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-green-300/35 rounded-full opacity-30 animate-pulse blur-sm" style={{animationDelay: '4s', animationDuration: '17s'}}></div>
+                                        <div className="absolute top-2/3 left-1/2 w-5 h-5 bg-purple-300/30 rounded-full opacity-25 animate-pulse blur-sm" style={{animationDelay: '1s', animationDuration: '19s'}}></div>
+                                        <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-amber-300/40 rounded-full opacity-30 animate-pulse blur-sm" style={{animationDelay: '6s', animationDuration: '15s'}}></div>
+                                        
+
+                                    </div>
                                     {/* Cercles explosifs - côté gauche */}
-                                    <div className="absolute -top-8 -left-8 w-16 h-16 bg-gradient-to-br from-orange-500/50 to-amber-500/50 rounded-full opacity-30 animate-pulse blur-sm" style={{animationDuration: '8s'}}></div>
-                                    <div className="absolute -top-12 -left-16 w-12 h-12 bg-gradient-to-br from-green-500/40 to-emerald-500/40 rounded-full opacity-25 animate-pulse blur-sm" style={{animationDelay: '2s', animationDuration: '10s'}}></div>
-                                    <div className="absolute top-1/4 -left-12 w-8 h-8 bg-gradient-to-br from-purple-500/45 to-violet-500/45 rounded-full opacity-35 animate-pulse blur-sm" style={{animationDelay: '4s', animationDuration: '12s'}}></div>
+                                    <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-orange-500/50 to-amber-500/50 rounded-full opacity-35 animate-pulse blur-sm" style={{animationDuration: '8s'}}></div>
+                                    <div className="absolute -top-10 -left-12 w-12 h-12 bg-gradient-to-br from-green-500/45 to-emerald-500/45 rounded-full opacity-30 animate-pulse blur-sm" style={{animationDelay: '2s', animationDuration: '10s'}}></div>
+                                    <div className="absolute top-1/4 -left-8 w-10 h-10 bg-gradient-to-br from-purple-500/45 to-violet-500/45 rounded-full opacity-40 animate-pulse blur-sm" style={{animationDelay: '4s', animationDuration: '12s'}}></div>
                                     
                                     {/* Formes en haut - réparties */}
                                     <div className="absolute -top-20 -left-6 w-10 h-10 bg-gradient-to-br from-orange-400/40 to-red-400/40 rounded-full opacity-25 animate-pulse blur-sm" style={{animationDuration: '15s', animationDelay: '1s'}}></div>
@@ -102,10 +130,10 @@ const Home = () => {
                                     <div className="absolute -bottom-16 left-2/3 w-11 h-11 bg-gradient-to-br from-purple-400/40 to-indigo-500/40 rounded-full opacity-35 animate-pulse blur-sm" style={{animationDuration: '16s', animationDelay: '2.5s'}}></div>
                                     
                                     {/* Triangles dynamiques - côté gauche et répartis */}
-                                    <div className="absolute -left-20 top-1/3 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-orange-500/40 opacity-25 animate-spin blur-sm" style={{animationDuration: '25s'}}></div>
-                                    <div className="absolute -left-14 bottom-1/4 w-0 h-0 border-l-[15px] border-r-[15px] border-b-[25px] border-l-transparent border-r-transparent border-b-green-400/45 opacity-30 animate-spin blur-sm" style={{animationDuration: '30s', animationDirection: 'reverse'}}></div>
-                                    <div className="absolute -top-20 left-1/3 w-0 h-0 border-l-[18px] border-r-[18px] border-b-[30px] border-l-transparent border-r-transparent border-b-purple-500/40 opacity-25 animate-spin blur-sm" style={{animationDuration: '28s', animationDelay: '2s'}}></div>
-                                    <div className="absolute -bottom-20 left-3/4 w-0 h-0 border-l-[16px] border-r-[16px] border-b-[28px] border-l-transparent border-r-transparent border-b-orange-400/45 opacity-30 animate-spin blur-sm" style={{animationDuration: '32s', animationDirection: 'reverse', animationDelay: '4s'}}></div>
+                                    <div className="absolute -left-12 top-1/3 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-orange-500/45 opacity-30 animate-spin blur-sm" style={{animationDuration: '25s'}}></div>
+                                    <div className="absolute -left-8 bottom-1/4 w-0 h-0 border-l-[18px] border-r-[18px] border-b-[30px] border-l-transparent border-r-transparent border-b-green-400/50 opacity-35 animate-spin blur-sm" style={{animationDuration: '30s', animationDirection: 'reverse'}}></div>
+                                    <div className="absolute -top-12 left-1/4 w-0 h-0 border-l-[18px] border-r-[18px] border-b-[30px] border-l-transparent border-r-transparent border-b-purple-500/45 opacity-30 animate-spin blur-sm" style={{animationDuration: '28s', animationDelay: '2s'}}></div>
+                                    <div className="absolute -bottom-14 left-1/2 w-0 h-0 border-l-[16px] border-r-[16px] border-b-[28px] border-l-transparent border-r-transparent border-b-orange-400/50 opacity-35 animate-spin blur-sm" style={{animationDuration: '32s', animationDirection: 'reverse', animationDelay: '4s'}}></div>
                                     
                                     {/* Carrés rotatifs - côté gauche et répartis */}
                                     <div className="absolute -left-18 top-1/2 w-14 h-14 bg-gradient-to-br from-purple-400/35 to-violet-500/35 rotate-45 opacity-25 animate-spin blur-sm" style={{animationDuration: '35s'}}></div>
@@ -125,11 +153,7 @@ const Home = () => {
                                     <div className="absolute -top-10 left-1/3 w-6 h-12 bg-gradient-to-b from-purple-300/45 to-violet-400/45 rotate-45 opacity-25 animate-spin blur-sm" style={{animationDuration: '30s', animationDelay: '2s'}}></div>
                                     <div className="absolute -bottom-10 left-3/4 w-8 h-16 bg-gradient-to-b from-orange-400/40 to-red-500/40 rotate-12 opacity-30 animate-pulse blur-sm" style={{animationDelay: '6s', animationDuration: '20s'}}></div>
                                     
-                                    {/* Étoiles - côté gauche et réparties */}
-                                    <div className="absolute -top-10 -left-24 w-6 h-6 bg-gradient-to-br from-purple-400/45 to-violet-400/45 opacity-25 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', animationDelay: '1s', animationDuration: '24s'}}></div>
-                                    <div className="absolute -bottom-6 -left-8 w-4 h-4 bg-gradient-to-br from-orange-400/50 to-red-400/50 opacity-30 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', animationDelay: '7s', animationDuration: '21s'}}></div>
-                                    <div className="absolute -top-14 left-1/4 w-5 h-5 bg-gradient-to-br from-green-400/45 to-emerald-400/45 opacity-25 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', animationDelay: '3s', animationDuration: '26s'}}></div>
-                                    <div className="absolute -bottom-8 left-1/2 w-4 h-4 bg-gradient-to-br from-purple-400/50 to-indigo-400/50 opacity-30 animate-pulse blur-sm" style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', animationDelay: '8s', animationDuration: '23s'}}></div>
+
                                     
                                     {/* Particules flottantes - côté gauche et réparties */}
                                     <div className="absolute -top-16 -left-12 w-2 h-2 bg-green-300/40 rounded-full opacity-20 animate-pulse blur-sm" style={{animationDelay: '2s', animationDuration: '15s'}}></div>

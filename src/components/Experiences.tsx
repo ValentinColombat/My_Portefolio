@@ -71,7 +71,21 @@ const Experiences = () => {
     return (
         <div id="Experiences" className="relative pt-2 md:pt-2 pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
             <Title title="Expériences" />
-            <div className="flex flex-col-reverse lg:flex-row justify-center items-center max-w-7xl mx-auto">
+            
+            {/* Container avec effet glow morphisme */}
+            <div className="relative max-w-[1600px] mx-auto">
+                {/* Effet de glow externe */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 via-purple-500/5 to-cyan-500/10 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                
+                {/* Effet de glow interne */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/5 via-transparent to-purple-500/5 rounded-2xl blur-xl"></div>
+                
+                {/* Bordure animée */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 via-purple-500/10 to-cyan-500/20 rounded-2xl blur-sm animate-pulse"></div>
+                
+                {/* Container principal avec glassmorphism */}
+                <div className="relative bg-slate-800/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
+                    <div className="flex flex-col-reverse lg:flex-row justify-center items-center">
                 <div className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center lg:w-1/3 mt-6 lg:mt-0">
                     {skills.map((skill) => (
                         <div key={skill.id} className="flex justify-center items-center flex-col">
@@ -113,8 +127,9 @@ const Experiences = () => {
                             </ul>
                         </div>
                     ))}
-                </div>
+                    </div>            </div>
             </div>
+        </div>
         </div>
     )
 }

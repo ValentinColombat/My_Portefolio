@@ -37,15 +37,15 @@ const Home = () => {
 
                         {/* Description */}
                         <p className="text-base sm:text-lg lg:text-xl text-white/60 leading-relaxed max-w-lg font-light">
-                            Je transforme des idées complexes en 
-                            <span className="text-orange-400 font-medium"> expériences digitales </span>
-                            exceptionnelles et performantes.
+                            Je créé des
+                            <span className="text-orange-400 font-medium"> solutions web </span>
+                            avec rigueur et passion.
                         </p>
 
                         {/* Statistiques */}
                         <div className="flex gap-4 sm:gap-6 lg:gap-8 pt-4">
                             <div className="text-center">
-                                <div className="text-xl sm:text-2xl font-bold text-orange-400">5+</div>
+                                <div className="text-xl sm:text-2xl font-bold text-orange-400">8+</div>
                                 <div className="text-xs sm:text-sm text-white/50">Frameworks</div>
                             </div>
                             <div className="text-center">
@@ -53,8 +53,19 @@ const Home = () => {
                                 <div className="text-xs sm:text-sm text-white/50">Projets</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-xl sm:text-2xl font-bold text-orange-400">100%</div>
-                                <div className="text-xs sm:text-sm text-white/50">Impliqué</div>
+                                <div className="flex items-center justify-center gap-2">
+                                    <div className="text-xl sm:text-2xl font-bold text-orange-400">100%</div>
+                                    {/* Barre d'énergie avec visualiseur audio */}
+                                    <div className="flex items-end gap-0.5 h-4">
+                                        <div className="w-0.5 h-2 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0s', animationDuration: '1.2s'}}></div>
+                                        <div className="w-0.5 h-3 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0.1s', animationDuration: '1.5s'}}></div>
+                                        <div className="w-0.5 h-4 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0.2s', animationDuration: '1.1s'}}></div>
+                                        <div className="w-0.5 h-3.5 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0.05s', animationDuration: '1.4s'}}></div>
+                                        <div className="w-0.5 h-2.5 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0.15s', animationDuration: '1.3s'}}></div>
+                                        <div className="w-0.5 h-3 bg-gradient-to-t from-orange-500 to-orange-300 rounded-full animate-pulse" style={{animationDelay: '0.25s', animationDuration: '1.6s'}}></div>
+                                    </div>
+                                </div>
+                                <div className="text-xs sm:text-sm text-white/50">Energie</div>
                             </div>
                         </div>
 
@@ -64,7 +75,7 @@ const Home = () => {
                                 <span>Explorer mon travail</span>
                                 <div className="btn-arrow">→</div>
                             </a>
-                            <a href="#" className="btn-minimal group">
+                            <a href="/contact" className="btn-minimal group">
                                 <span>Commencer un projet</span>
                                 <Mail className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
                             </a>

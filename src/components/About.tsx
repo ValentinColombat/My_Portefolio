@@ -15,45 +15,45 @@ import {
 } from "lucide-react";
 
 const stats = [
-    { number: "3+", label: "Années d'expérience", icon: <Calendar className="w-5 h-5" /> },
-    { number: "50+", label: "Projets réalisés", icon: <Rocket className="w-5 h-5" /> },
-    { number: "15+", label: "Technologies maîtrisées", icon: <Code2 className="w-5 h-5" /> },
-    { number: "100%", label: "Satisfaction client", icon: <Star className="w-5 h-5" /> }
+    { number: "6+", label: "Mois de code quotidien", icon: <Calendar className="w-5 h-5" /> },
+    { number: "12+", label: "Projets réalisés", icon: <Rocket className="w-5 h-5" /> },
+    { number: "8+", label: "Technologies maîtrisées", icon: <Code2 className="w-5 h-5" /> },
+    { number: "100%", label: "Engagement & passion", icon: <Star className="w-5 h-5" /> }
 ];
 
 const expertise = [
     {
         id: 1,
-        title: "Développement Frontend",
-        description: "Création d'interfaces utilisateur modernes et responsives avec React, TypeScript et les dernières technologies web.",
-        skills: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+        title: "Développement Web Frontend",
+        description: "Maîtrise des fondamentaux solides : HTML, CSS, JavaScript. Apprentissage avancé de React pour créer des interfaces modernes et interactives.",
+        skills: ["HTML", "CSS", "JavaScript", "React (en cours)"],
         icon: <Code2 className="w-8 h-8" />,
         color: "from-blue-500 to-cyan-500"
     },
     {
         id: 2,
-        title: "Architecture Backend",
-        description: "Conception d'APIs robustes et scalables avec Node.js, bases de données et architecture microservices.",
-        skills: ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+        title: "Développement Backend & BDD",
+        description: "Création d'APIs avec Node.js et gestion de bases de données SQL. Focus sur des solutions efficaces et bien structurées.",
+        skills: ["Node.js", "SQL", "APIs REST", "Architecture"],
         icon: <Rocket className="w-8 h-8" />,
         color: "from-green-500 to-emerald-500"
     },
     {
         id: 3,
-        title: "Design & UX",
-        description: "Création d'expériences utilisateur exceptionnelles alliant esthétique moderne et usabilité optimale.",
-        skills: ["Figma", "UI/UX", "Prototyping", "Design System"],
+        title: "Apprentissage & Méthode",
+        description: "Approche méthodique et rigoureuse. Capacité d'adaptation rapide aux nouvelles technologies avec un focus sur la qualité.",
+        skills: ["Documentation", "Git", "Workflow", "Problem Solving"],
         icon: <Palette className="w-8 h-8" />,
         color: "from-purple-500 to-pink-500"
     }
 ];
 
 const personalInfo = {
-    name: "Valentin Colombat",
-    role: "Développeur Full Stack",
-    location: "France",
-    experience: "3+ ans",
-    philosophy: "Transformer des idées en solutions digitales exceptionnelles"
+    name: "Valentin",
+    role: "Développeur Web Junior",
+    location: "Région de Lille",
+    experience: "1 an de formation intensive",
+    philosophy: "L'innovation naît de la rencontre entre créativité et rigueur technique"
 };
 
 const About = () => {
@@ -105,7 +105,7 @@ const About = () => {
                                 </div>
                                 <div className="flex items-center gap-3 text-white/70">
                                     <TrendingUp className="w-5 h-5 text-orange-400" />
-                                    <span>{personalInfo.experience} d'expérience</span>
+                                    <span>{personalInfo.experience}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-white/70">
                                     <Heart className="w-5 h-5 text-orange-400" />
@@ -139,16 +139,22 @@ const About = () => {
                             {/* Description détaillée */}
                             <div className="space-y-4">
                                 <p className="text-white/70 leading-relaxed">
-                                    Développeur passionné avec plus de 3 ans d'expérience, je me spécialise dans la création 
-                                    d'applications web modernes et performantes. Mon approche combine <strong className="text-white">expertise technique</strong>, 
-                                    <strong className="text-white"> créativité</strong> et <strong className="text-white">attention aux détails</strong> 
-                                    pour livrer des solutions qui dépassent les attentes.
+                                    Bienvenue dans mon univers ! Je suis un développeur web animé par une 
+                                    <strong className="text-white"> curiosité insatiable</strong> et une <strong className="text-white">soif d'apprendre </strong> 
+                                    qui me pousse à explorer chaque jour de nouvelles possibilités techniques.
                                 </p>
                                 
                                 <p className="text-white/70 leading-relaxed">
-                                    Que ce soit pour développer une interface utilisateur intuitive, concevoir une architecture backend robuste 
-                                    ou optimiser les performances, j'apporte une vision holistique à chaque projet. 
-                                    <span className="text-orange-400"> Ma mission : transformer vos idées en expériences digitales exceptionnelles.</span>
+                                    Ma force ? Une capacité à <strong className="text-white">assimiler rapidement</strong> les concepts complexes et à les 
+                                    transformer en solutions concrètes. Chaque ligne de code que j'écris est pensée dans une 
+                                    <strong className="text-white"> vision globale</strong> du projet.
+                                    <span className="text-orange-400"> J'aime créer des expériences qui marqueront positivement vos utilisateurs.</span>
+                                </p>
+                                
+                                <p className="text-white/70 leading-relaxed">
+                                    En constante évolution, je mets un point d'honneur à <strong className="text-white">rester à jour</strong> avec les 
+                                    dernières innovations tout en gardant les pieds sur terre. Mon approche pragmatique me permet de livrer 
+                                    des projets <strong className="text-orange-400">fonctionnels, élégants et maintenables</strong>.
                                 </p>
                             </div>
 
@@ -157,11 +163,11 @@ const About = () => {
                                 <button className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1">
                                     <div className="flex items-center gap-2">
                                         <Coffee className="w-5 h-5" />
-                                        Discutons de votre projet
+                                        Parlons de votre projet
                                     </div>
                                 </button>
                                 <button className="border border-white/20 text-white px-8 py-3 rounded-full font-medium hover:bg-white/5 transition-all duration-300">
-                                    Télécharger mon CV
+                                    Voir mon GitHub
                                 </button>
                             </div>
                         </div>
@@ -244,16 +250,16 @@ const About = () => {
                     <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
                         <Zap className="w-12 h-12 text-orange-400 mx-auto mb-6" />
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                            Prêt à donner vie à votre projet ?
+                            Construisons ensemble votre vision
                         </h3>
                         <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                            Collaborons ensemble pour créer quelque chose d'extraordinaire. 
-                            Contactez-moi et discutons de vos idées !
+                            Votre projet mérite une approche personnalisée et une attention particulière aux détails. 
+                            Discutons de la façon dont je peux contribuer à votre réussite !
                         </p>
                         <button className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:shadow-xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1">
                             <div className="flex items-center gap-2">
                                 <Users className="w-5 h-5" />
-                                Commençons à collaborer
+                                Rejoignons l'équipe
                             </div>
                         </button>
                     </div>

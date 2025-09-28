@@ -10,67 +10,22 @@ import imgTYPE from "../assets/techno/typescript.svg";
 import imgTAILWIND from "../assets/techno/tailwind.png";
 import imgPRISMA from "../assets/techno/prisma.webp";
 
-import google from "../assets/companies/google.png";
-import meta from "../assets/companies/meta.webp";
-import amazon from "../assets/companies/amazon.png";
-
-
-
 const skills = [
     { id: 1, name: "HTML", image: imgHTML },
     { id: 2, name: "CSS", image: imgCSS },
     { id: 3, name: "JavaScript", image: imgJS },
     { id: 4, name: "React", image: imgREACT },
     { id: 5, name: "Node.js", image: imgNODE },
-    { id: 6, name: "Tailwind CSS", image: imgTAILWIND },
-    { id: 7, name: "TypeScript", image: imgTYPE },
-    { id: 8, name: "Next.js", image: imgNEXT },
-    { id: 9, name: "Prisma", image: imgPRISMA },
+    { id: 6, name: "SQL", image: imgPRISMA },
+    { id: 7, name: "Tailwind CSS", image: imgTAILWIND },
+    { id: 8, name: "TypeScript", image: imgTYPE },
+    { id: 9, name: "Next.js", image: imgNEXT },
 ];
-
-
-const experiences = [
-    {
-        id: 1,
-        role: "Software Engineer",
-        company: "Google",
-        period: "Sep 2022 - Présent",
-        description: [
-            "Développement de nouvelles fonctionnalités pour Google Maps.",
-            "Optimisation des performances de l'application.",
-        ],
-        image: google,
-    },
-    {
-        id: 2,
-        role: "Fullstack Developer",
-        company: "Meta",
-        period: "Jan 2021 - Août 2022",
-        description: [
-            "Création d'une plateforme interne de collaboration pour les équipes.",
-            "Mise en place d'une architecture scalable et optimisée.",
-        ],
-        image: meta,
-    },
-    {
-        id: 3,
-        role: "Frontend Developer",
-        company: "Amazon",
-        period: "Mai 2019 - Déc 2020",
-        description: [
-            "Développement d'une interface utilisateur pour Amazon Web Services.",
-            "Implémentation des tests unitaires et E2E.",
-        ],
-        image: amazon,
-    },
-];
-
-
 
 const Experiences = () => {
     return (
         <div id="Experiences" className="relative pt-2 md:pt-2 pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
-            <Title title="Expériences" />
+            <Title title="Projets & Compétences" />
             
             {/* Container avec effet glow morphisme */}
             <div className="relative max-w-[1600px] mx-auto">
@@ -99,34 +54,60 @@ const Experiences = () => {
                     ))}
                 </div>
 
-                <div className="lg:ml-4 flex flex-col space-y-4 w-full lg:w-2/3">
-                    {experiences.map((expericence) => (
-                        <div
-                            key={expericence.id}
-                            className="flex flex-col bg-base-200 p-4 sm:p-5 rounded-xl shadow-lg"
-                        >
-                            <div className="flex items-center">
-                                <img
-                                    src={expericence.image}
-                                    alt={expericence.company}
-                                    className="object-cover h-8 w-8 sm:h-10 sm:w-10 rounded"
-                                />
-                                <div className="ml-3 sm:ml-4 flex-1">
-                                    <h1 className="text-base sm:text-lg lg:text-xl text-accent font-bold break-words">
-                                        {expericence.role}, {expericence.company}
-                                    </h1>
-                                    <span className="text-xs sm:text-sm text-gray-600">{expericence.period}</span>
+                <div className="lg:ml-4 w-full lg:w-2/3">
+                    <div className="bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10">
+                        <div className="space-y-6">
+                            <div className="text-center mb-8">
+                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                                    Qui suis-je vraiment ?
+                                </h3>
+                                <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-purple-500 mx-auto rounded-full"></div>
+                            </div>
+                            
+                            <div className="space-y-4 text-white/80 leading-relaxed">
+                                <p>
+                                    À <strong className="text-orange-400">30 ans</strong>, j'ai découvert ma véritable passion dans le développement web. 
+                                    Depuis plus de 6 mois, je code <strong className="text-white">quotidiennement</strong> avec une détermination 
+                                    qui surprend mon entourage. Ce qui me fascine ? <strong className="text-orange-400">L'infinité de possibilités</strong> 
+                                    qu'offre le code pour résoudre des problèmes concrets.
+                                </p>
+                                
+                                <p>
+                                    Mon approche ? <strong className="text-white">Méthodique et rigoureuse</strong>. Je préfère maîtriser solidement 
+                                    HTML, CSS, JavaScript, Node.js et SQL plutôt que de survoler une multitude de technologies. 
+                                    Mes proches me décrivent comme quelqu'un de <strong className="text-orange-400">fiable, réfléchi et juste</strong>.
+                                </p>
+                                
+                                <p>
+                                    Ancien pratiquant de <strong className="text-white">football américain</strong>, j'apporte cette philosophie d'équipe 
+                                    dans mes projets : <strong className="text-orange-400">engagement total, communication claire</strong> et confiance mutuelle. 
+                                    Dans ce sport, l'individu n'existe que par l'équipe - une leçon que j'applique au quotidien.
+                                </p>
+                                
+                                <p>
+                                    Ce qui me différencie ? <strong className="text-white">Vous n'aurez jamais besoin de me répéter les choses deux fois</strong>. 
+                                    Je comprends les sous-entendus, saisis les enjeux de fond et ne peux tout simplement pas rendre un travail 
+                                    dont je ne serais pas fier. <strong className="text-orange-400">C'est plus fort que moi.</strong>
+                                </p>
+                                
+                                <div className="bg-gradient-to-r from-orange-500/10 to-purple-500/10 p-4 rounded-xl border border-orange-500/20 mt-6">
+                                    <p className="text-center text-white font-medium italic">
+                                        "Je ne cherche pas juste un projet ou un poste, je veux <strong className="text-orange-400">intégrer une équipe</strong>, 
+                                        partager ses valeurs et mettre ma passion au service d'un objectif commun qui a du sens."
+                                    </p>
+                                </div>
+                                
+                                <div className="text-center mt-8">
+                                    <p className="text-white/60 text-sm">
+                                        🚀 Disponible pour missions freelance et recherche active d'un poste
+                                    </p>
+                                    <p className="text-white/60 text-sm mt-2">
+                                        📍 Région de Dunkerque - Ouvert à la mobilité
+                                    </p>
                                 </div>
                             </div>
-                            <ul className="list-disc ml-8 sm:ml-12 lg:ml-16 mt-2 space-y-1">
-                                {expericence.description.map((desc, index) => (
-                                    <li key={index} className="text-sm sm:text-base">
-                                        {desc}
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
-                    ))}
+                    </div>
                     </div>            </div>
             </div>
         </div>

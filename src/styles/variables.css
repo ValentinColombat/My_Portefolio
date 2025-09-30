@@ -1,0 +1,30 @@
+/* ===============================================
+   VARIABLES CSS PERSONNALISÉES
+   =============================================== */
+
+:root {
+  /* Couleurs de base sombres élégantes */
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #1a1a1d;
+  --bg-tertiary: #2a2a2f;
+  
+  /* Couleurs de texte */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e7;
+  --text-muted: #86868b;
+  
+  /* Couleurs d'accent modernes */
+  --accent-blue: #007aff;
+  --accent-purple: #af52de;
+  --accent-pink: #ff2d92;
+  --accent-orange: #ff9500;
+  --accent-green: #30d158;
+  --accent-cyan: #64d2ff;
+  
+  /* Dégradés premium */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-tesla: linear-gradient(135deg, #000000 0%, #434343 100%);
+  --gradient-apple: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}

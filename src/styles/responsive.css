@@ -1,0 +1,99 @@
+/* ===============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   =============================================== */
+
+/* === TRÈS PETITS ÉCRANS === */
+@media (max-width: 475px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajustements pour très petits écrans */
+  .hero-card {
+    max-width: 280px;
+  }
+  
+  .modern-card {
+    padding: 1rem;
+  }
+  
+  /* Tailles de texte responsives */
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+}
+
+/* === MOBILES === */
+@media (max-width: 640px) {
+  /* Optimisations pour mobile */
+  .floating-element-delayed,
+  .floating-element-slow {
+    display: none; /* Masquer les éléments décoratifs sur mobile pour les performances */
+  }
+  
+  .navbar-modern {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* === TABLETTES === */
+@media (max-width: 768px) {
+  .hero-gradient-text {
+    font-size: 3rem;
+  }
+  
+  .btn-ultra-modern, .btn-minimal {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .about-image-container {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+  
+  .about-card-content {
+    text-align: center;
+  }
+  
+  /* Projects responsive */
+  .project-image-container {
+    height: 200px;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .project-content > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  .project-title {
+    font-size: 1.125rem;
+  }
+}
+
+/* === TABLETTES MOYENNES === */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Optimisations pour tablettes */
+  .about-card {
+    padding: 1.5rem;
+  }
+}

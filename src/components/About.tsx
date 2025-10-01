@@ -1,10 +1,10 @@
 import Title from "./Title"
 import img from '../assets/projects/img2.jpg';
+import { Link } from 'react-router-dom';
 import { 
     Code2, 
     Rocket, 
     Palette, 
-    Users, 
     Coffee,
     MapPin,
     Calendar,
@@ -18,14 +18,14 @@ const stats = [
     { number: "6+", label: "Mois de code quotidien", icon: <Calendar className="w-5 h-5" /> },
     { number: "12+", label: "Projets réalisés", icon: <Rocket className="w-5 h-5" /> },
     { number: "8+", label: "Technologies maîtrisées", icon: <Code2 className="w-5 h-5" /> },
-    { number: "100%", label: "Engagement & passion", icon: <Star className="w-5 h-5" /> }
+    { number: "100%", label: "Engagement & écoute", icon: <Star className="w-5 h-5" /> }
 ];
 
 const expertise = [
     {
         id: 1,
         title: "Développement Web Frontend",
-        description: "Maîtrise des fondamentaux solides : HTML, CSS, JavaScript. Apprentissage avancé de React pour créer des interfaces modernes et interactives.",
+        description: "Maîtrise des fondamentaux solides : HTML, CSS, JavaScript. Apprentissage de React pour créer des interfaces modernes et interactives.",
         skills: ["HTML", "CSS", "JavaScript", "React (en cours)"],
         icon: <Code2 className="w-8 h-8" />,
         color: "from-blue-500 to-cyan-500"
@@ -51,8 +51,8 @@ const expertise = [
 const personalInfo = {
     name: "Valentin",
     role: "Développeur Web Junior",
-    location: "Région de Lille",
-    experience: "1 an de formation intensive",
+    location: "Région de Lille et ses alentours",
+    experience: "Je code tous les jours",
     philosophy: "L'innovation naît de la rencontre entre créativité et rigueur technique"
 };
 
@@ -91,7 +91,7 @@ const About = () => {
                                     <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
                                         <div className="flex items-center gap-2">
                                             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                            Disponible
+                                            En ligne
                                         </div>
                                     </div>
                                 </div>
@@ -130,9 +130,6 @@ const About = () => {
                             <div className="relative">
                                 <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-orange-500 to-purple-500 rounded-full"></div>
                                 <div className="pl-6">
-                                    <p className="text-lg text-white/80 italic leading-relaxed">
-                                        "{personalInfo.philosophy}"
-                                    </p>
                                 </div>
                             </div>
 
@@ -140,7 +137,7 @@ const About = () => {
                             <div className="space-y-4">
                                 <p className="text-white/70 leading-relaxed">
                                     Bienvenue dans mon univers ! Je suis un développeur web animé par une 
-                                    <strong className="text-white"> curiosité insatiable</strong> et une <strong className="text-white">soif d'apprendre </strong> 
+                                    <strong className="text-white"> curiosité </strong> et une <strong className="text-white">soif d'apprendre </strong> 
                                     qui me pousse à explorer chaque jour de nouvelles possibilités techniques.
                                 </p>
                                 
@@ -160,15 +157,24 @@ const About = () => {
 
                             {/* CTA */}
                             <div className="flex flex-wrap gap-4 pt-4">
-                                <button className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1">
-                                    <div className="flex items-center gap-2">
-                                        <Coffee className="w-5 h-5" />
-                                        Parlons de votre projet
-                                    </div>
-                                </button>
-                                <button className="border border-white/20 text-white px-8 py-3 rounded-full font-medium hover:bg-white/5 transition-all duration-300">
+                                {/* Bouton Contact - avec Link */}
+                                <Link 
+                                    to="/contact"
+                                    className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-2 no-underline"
+                                >
+                                    <Coffee className="w-5 h-5" />
+                                    Parlons de votre projet
+                                </Link>
+
+                                {/* Bouton GitHub - avec a */}
+                                <a 
+                                    href="https://github.com/ValentinColombat" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="border border-white/20 text-white px-8 py-3 rounded-full font-medium hover:bg-white/5 transition-all duration-300 inline-block text-center no-underline"
+                                >
                                     Voir mon GitHub
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -256,12 +262,12 @@ const About = () => {
                             Votre projet mérite une approche personnalisée et une attention particulière aux détails. 
                             Discutons de la façon dont je peux contribuer à votre réussite !
                         </p>
-                        <button className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-4 rounded-full font-medium hover:shadow-xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1">
-                            <div className="flex items-center gap-2">
-                                <Users className="w-5 h-5" />
-                                Rejoignons l'équipe
-                            </div>
-                        </button>
+                        <Link 
+                            to="/contact"
+                            className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-2 no-underline">
+                            <Coffee className="w-5 h-5" />
+                            Parlons de votre projet
+                        </Link>
                     </div>
                 </div>
             </div>

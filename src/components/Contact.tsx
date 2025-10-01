@@ -133,7 +133,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-medium text-white">Localisation</h3>
-                                        <p className="text-white/60">Région de Dunkerque, France</p>
+                                        <p className="text-white/60">Région de Lille, France</p>
                                     </div>
                                 </div>
                             </div>

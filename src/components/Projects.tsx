@@ -1,4 +1,6 @@
 import Title from "./Title"
+import { Coffee } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
@@ -6,7 +8,7 @@ import img3 from '../assets/projects/3.png';
 import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/5.png';
 import img6 from '../assets/projects/6.png';
-import { Github, Video, ExternalLink } from "lucide-react";
+import { Github,Video} from "lucide-react";
 
 const projects = [
     {
@@ -155,10 +157,19 @@ const Projects = () => {
 
                     {/* Bouton voir plus */}
                     <div className="text-center mt-16">
-                        <a href="#" className="btn-ultra-modern group">
-                            <span>Voir tous mes projets</span>
-                            <ExternalLink className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
-                        </a>
+                        <Link 
+                            to="/contact"
+                            className="bg-gradient-to-r from-orange-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-2 no-underline">
+                            <Coffee className="w-5 h-5" />
+                            Parlons de votre projet
+                        </Link>
+                    </div>
+                    <div className="text-center mt-16">
+                        <Link 
+                            to="/contact"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border border-gray-300/20 text-gray-300 font-medium rounded-lg hover:bg-gray-800/30 hover:border-gray-200/30 hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10 backdrop-blur-sm no-underline">
+                            Vous êtes une entreprise et vous recrutez ?
+                        </Link>
                     </div>
                 </div>
             </div>

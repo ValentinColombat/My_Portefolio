@@ -167,12 +167,14 @@
   opacity: 0;
   transform: translateY(25px);
   transition: all 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 /* État visible - élément animé */
 .scroll-visible {
   opacity: 1;
   transform: translateY(0);
+  transition: all 2.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Variations d'animations - toutes avec fade-up très progressif */
@@ -240,14 +242,16 @@
 
 /* Animation ultra-smooth pour les éléments sensibles */
 .scroll-ultra-smooth {
-  transition: all 3.5s cubic-bezier(0.1, 0.9, 0.5, 1) !important;
+  transition: all 3.5s cubic-bezier(0.1, 0.9, 0.5, 1);
 }
+
+
 
 /* Respect des préférences utilisateur */
 @media (prefers-reduced-motion: reduce) {
   .scroll-hidden,
   .scroll-visible {
     transition: opacity 1s ease;
-    transform: none !important;
+    transform: none;
   }
 }

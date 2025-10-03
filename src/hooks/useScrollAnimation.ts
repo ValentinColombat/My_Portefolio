@@ -10,8 +10,8 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>(optio
   const elementRef = useRef<T | null>(null);
   
   const {
-    threshold = 0.1,
-    rootMargin = '0px 0px -50px 0px',
+    threshold = 0.2,
+    rootMargin = '0px 0px -100px 0px',
     triggerOnce = true
   } = options;
 
@@ -19,6 +19,11 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>(optio
     const element = elementRef.current;
     if (!element) return;
 
+    // Forcer l'état initial immédiatement
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(25px)';
+    element.style.transition = 'all 2.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    
     // Ajouter la classe hidden par défaut
     element.classList.add('scroll-hidden');
 
@@ -26,9 +31,10 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>(optio
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Élément visible : déclencher l'animation
-            entry.target.classList.remove('scroll-hidden');
-            entry.target.classList.add('scroll-visible');
+                      // Animation avec style direct pour plus de fiabilité
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0px)';
+          element.classList.replace('scroll-hidden', 'scroll-visible');
             
             // Si triggerOnce est true, arrêter d'observer
             if (triggerOnce) {
@@ -36,8 +42,11 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>(optio
             }
           } else if (!triggerOnce) {
             // Si on veut que l'animation se répète
-            entry.target.classList.remove('scroll-visible');
-            entry.target.classList.add('scroll-hidden');
+            const target = entry.target as HTMLElement;
+            target.style.opacity = '0';
+            target.style.transform = 'translateY(25px)';
+            target.classList.remove('scroll-visible');
+            target.classList.add('scroll-hidden');
           }
         });
       },
@@ -65,8 +74,8 @@ export const useScrollAnimationWithDelay = <T extends HTMLElement = HTMLDivEleme
   const elementRef = useRef<T | null>(null);
   
   const {
-    threshold = 0.1,
-    rootMargin = '0px 0px -50px 0px',
+    threshold = 0.2,
+    rootMargin = '0px 0px -100px 0px',
     triggerOnce = true
   } = options;
 
@@ -74,23 +83,33 @@ export const useScrollAnimationWithDelay = <T extends HTMLElement = HTMLDivEleme
     const element = elementRef.current;
     if (!element) return;
 
-    element.classList.add('scroll-hidden');
+    // Forcer l'état initial immédiatement
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(25px)';
+    element.style.transition = 'all 2.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    element.classList.add('scroll-hidden', 'scroll-hidden-debug');
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
-              entry.target.classList.remove('scroll-hidden');
-              entry.target.classList.add('scroll-visible');
+              const target = entry.target as HTMLElement;
+              target.style.opacity = '1';
+              target.style.transform = 'translateY(0)';
+              target.classList.remove('scroll-hidden');
+              target.classList.add('scroll-visible');
             }, delay);
             
             if (triggerOnce) {
               observer.unobserve(entry.target);
             }
           } else if (!triggerOnce) {
-            entry.target.classList.remove('scroll-visible');
-            entry.target.classList.add('scroll-hidden');
+            const target = entry.target as HTMLElement;
+            target.style.opacity = '0';
+            target.style.transform = 'translateY(25px)';
+            target.classList.remove('scroll-visible');
+            target.classList.add('scroll-hidden');
           }
         });
       },

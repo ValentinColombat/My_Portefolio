@@ -20,7 +20,7 @@ const Navbar = () => {
             >
                 <Container className="mr-2 sm:mr-3 text-accent drop-shadow-lg w-5 h-5 sm:w-6 sm:h-6" />
                 <span className="hidden sm:inline">VALENTIN</span>
-                <span className="sm:hidden">Valentin</span>
+                <span className="sm:hidden">Valentin C.</span>
                 <span className="modern-gradient-text ml-1">
                     <span className="hidden sm:inline">COLOMBAT</span>
                 </span>

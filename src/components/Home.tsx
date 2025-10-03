@@ -1,9 +1,10 @@
 import { Mail } from "lucide-react"
 import img from '../assets/projects/test 11.png'
+import imgMobile from '../assets/projects/7.png'
 
 const Home = () => {
     return (
-        <div id="Home" className="relative py-20 md:py-32 flex items-center justify-center overflow-hidden">
+        <div id="Home" className="relative py-12 md:py-20 lg:py-32 flex items-center justify-center overflow-hidden">
             
             {/* Grille de fond moderne */}
             <div className="absolute inset-0 grid-background opacity-30"></div>
@@ -13,10 +14,10 @@ const Home = () => {
             <div className="absolute top-1/3 right-2 sm:right-10 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500/20 to-transparent rounded-xl rotate-45 floating-element-slow"></div>
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-4 md:gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
                     
                     {/* Contenu principal */}
-                    <div className="space-y-8 md:order-1 order-2">
+                    <div className="space-y-4 md:space-y-8 md:order-1 order-2">
                         
                         {/* Badge de statut */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
@@ -25,7 +26,7 @@ const Home = () => {
                         </div>
 
                         {/* Titre principal */}
-                        <div className="space-y-4">
+                        <div className="space-y-2 md:space-y-4">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-none">
                                 <span className="block text-white/40 text-lg sm:text-xl md:text-2xl lg:text-3xl font-normal mb-2 tracking-widest uppercase">
                                     Valentin Colombat
@@ -43,7 +44,7 @@ const Home = () => {
                         </p>
 
                         {/* Statistiques */}
-                        <div className="flex gap-4 sm:gap-6 lg:gap-8 pt-4">
+                        <div className="flex gap-4 sm:gap-6 lg:gap-8 pt-2 md:pt-4">
                             <div className="text-center">
                                 <div className="text-xl sm:text-2xl font-bold text-orange-400">8+</div>
                                 <div className="text-xs sm:text-sm text-white/50">Frameworks</div>
@@ -70,7 +71,7 @@ const Home = () => {
                         </div>
 
                         {/* Actions */}
-                        <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                        <div className="flex flex-col sm:flex-row gap-4 pt-3 md:pt-6">
                             <a href="#Projects" className="btn-ultra-modern group">
                                 <span>Explorer mon travail</span>
                                 <div className="btn-arrow">→</div>
@@ -181,10 +182,17 @@ const Home = () => {
                                 
                                 {/* Image principale qui "sort" du fond */}
                                 <div className="relative group">
+                                    {/* Image mobile - visible uniquement sur petits écrans */}
+                                    <img 
+                                        src={imgMobile} 
+                                        alt="Valentin Colombat" 
+                                        className="w-full h-auto rounded-2xl object-cover hero-image-3d relative z-10 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/25 md:hidden"
+                                    />
+                                    {/* Image desktop - visible uniquement sur grands écrans */}
                                     <img 
                                         src={img} 
                                         alt="Valentin Colombat" 
-                                        className="w-full h-auto rounded-2xl object-cover hero-image-3d relative z-10 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/25"
+                                        className="w-full h-auto rounded-2xl object-cover hero-image-3d relative z-10 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-orange-500/25 hidden md:block"
                                     />
                                     {/* Liseré orange au survol */}
                                     <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-orange-400/60 transition-all duration-500 z-20 pointer-events-none group-hover:shadow-lg group-hover:shadow-orange-500/30"></div>

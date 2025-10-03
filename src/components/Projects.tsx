@@ -1,6 +1,7 @@
 import Title from "./Title"
 import { Coffee } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
@@ -74,6 +75,10 @@ const projects = [
 ];
 
 const Projects = () => {
+    // Animations pour les différentes sections
+    const { elementRef: titleRef, isVisible: isTitleVisible } = useIntersectionObserver({ threshold: 0.3 });
+    const { elementRef: subtitleRef, isVisible: isSubtitleVisible } = useIntersectionObserver({ threshold: 0.3 });
+    const { elementRef: gridRef, isVisible: isGridVisible } = useIntersectionObserver({ threshold: 0.1 });
 
     return (
         <div className="relative pt-20 pb-10 md:pt-32 md:pb-16 overflow-hidden" id="Projects">
@@ -88,12 +93,18 @@ const Projects = () => {
             <div className="container mx-auto px-8 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     
-                    <div>
+                    <div 
+                        ref={titleRef}
+                        className={`slide-in-bottom ${isTitleVisible ? 'visible' : ''}`}
+                    >
                         <Title title="Mes Projets" />
                     </div>
                     
                     {/* Sous-titre */}
-                    <div className="text-center mb-20">
+                    <div 
+                        ref={subtitleRef}
+                        className={`text-center mb-20 slide-in-bottom delay-200 ${isSubtitleVisible ? 'visible' : ''}`}
+                    >
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Découvrez une sélection de mes 
                             <span className="text-orange-400 font-medium"> projets récents</span>, 
@@ -102,7 +113,10 @@ const Projects = () => {
                     </div>
 
                     {/* Grille de projets */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div 
+                        ref={gridRef}
+                        className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 slide-in-bottom ${isGridVisible ? 'visible' : ''}`}
+                    >
                         {projects.map((project) => (
                             <div key={project.id} className="project-card group">
                                 

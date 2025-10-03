@@ -165,8 +165,8 @@
 /* État initial - élément caché */
 .scroll-hidden {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px);
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* État visible - élément animé */
@@ -175,10 +175,11 @@
   transform: translateY(0);
 }
 
-/* Variations d'animations */
+/* Variations d'animations - toutes avec fade-up smooth */
 .scroll-hidden.fade-up {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(25px);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .scroll-visible.fade-up {
@@ -188,7 +189,8 @@
 
 .scroll-hidden.fade-down {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateY(-15px);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .scroll-visible.fade-down {
@@ -198,46 +200,54 @@
 
 .scroll-hidden.fade-left {
   opacity: 0;
-  transform: translateX(-40px);
+  transform: translateY(15px);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .scroll-visible.fade-left {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .scroll-hidden.fade-right {
   opacity: 0;
-  transform: translateX(40px);
+  transform: translateY(15px);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .scroll-visible.fade-right {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .scroll-hidden.scale-up {
   opacity: 0;
-  transform: scale(0.8);
+  transform: translateY(20px) scale(0.95);
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .scroll-visible.scale-up {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0) scale(1);
 }
 
-/* Animation avec délai pour effets staggered */
-.scroll-delay-100 { transition-delay: 100ms; }
-.scroll-delay-200 { transition-delay: 200ms; }
-.scroll-delay-300 { transition-delay: 300ms; }
-.scroll-delay-400 { transition-delay: 400ms; }
-.scroll-delay-500 { transition-delay: 500ms; }
+/* Animation avec délai pour effets staggered - plus fluides */
+.scroll-delay-100 { transition-delay: 150ms; }
+.scroll-delay-200 { transition-delay: 300ms; }
+.scroll-delay-300 { transition-delay: 450ms; }
+.scroll-delay-400 { transition-delay: 600ms; }
+.scroll-delay-500 { transition-delay: 750ms; }
+
+/* Animation ultra-smooth pour les éléments sensibles */
+.scroll-ultra-smooth {
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
 
 /* Respect des préférences utilisateur */
 @media (prefers-reduced-motion: reduce) {
   .scroll-hidden,
   .scroll-visible {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s ease;
     transform: none !important;
   }
 }

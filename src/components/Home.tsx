@@ -1,7 +1,11 @@
 import { Mail } from "lucide-react"
 import img from '../assets/projects/test 11.png'
+import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation'
 
 const Home = () => {
+    const contentRef = useScrollAnimation();
+    const imageRef = useScrollAnimationWithDelay(300);
+
     return (
         <div id="Home" className="relative py-20 md:py-32 flex items-center justify-center overflow-hidden">
             
@@ -16,7 +20,7 @@ const Home = () => {
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
                     
                     {/* Contenu principal */}
-                    <div className="space-y-8 md:order-1 order-2">
+                    <div ref={contentRef} className="space-y-8 md:order-1 order-2">
                         
                         {/* Badge de statut */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
@@ -84,7 +88,7 @@ const Home = () => {
                     </div>
 
                     {/* Visuel moderne */}
-                    <div className="md:order-2 order-1 relative flex justify-end">
+                    <div ref={imageRef} className="md:order-2 order-1 relative flex justify-end">
                         <div className="relative w-full max-w-md">
                             
                             {/* Image avec explosion géométrique */}

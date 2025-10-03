@@ -157,3 +157,87 @@
   opacity: 1;
   animation-duration: 2s;
 }
+
+/* ===============================================
+   ANIMATIONS DE SCROLL (INTERSECTION OBSERVER)
+   =============================================== */
+
+/* État initial - élément caché */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* État visible - élément animé */
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variations d'animations */
+.scroll-hidden.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.scroll-visible.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-hidden.fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.scroll-visible.fade-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-hidden.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.scroll-visible.fade-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-hidden.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.scroll-visible.fade-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-hidden.scale-up {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.scroll-visible.scale-up {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animation avec délai pour effets staggered */
+.scroll-delay-100 { transition-delay: 100ms; }
+.scroll-delay-200 { transition-delay: 200ms; }
+.scroll-delay-300 { transition-delay: 300ms; }
+.scroll-delay-400 { transition-delay: 400ms; }
+.scroll-delay-500 { transition-delay: 500ms; }
+
+/* Respect des préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hidden,
+  .scroll-visible {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+}

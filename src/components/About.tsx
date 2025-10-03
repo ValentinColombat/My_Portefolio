@@ -1,6 +1,7 @@
 import Title from "./Title"
 import img from '../assets/projects/img2.jpg';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation';
 import { 
     Code2, 
     Rocket, 
@@ -15,7 +16,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-    { number: "6+", label: "Mois de code quotidien", icon: <Calendar className="w-5 h-5" /> },
+    { number: "365+", label: "Jours de code ", icon: <Calendar className="w-5 h-5" /> },
     { number: "12+", label: "Projets réalisés", icon: <Rocket className="w-5 h-5" /> },
     { number: "8+", label: "Technologies maîtrisées", icon: <Code2 className="w-5 h-5" /> },
     { number: "100%", label: "Engagement & écoute", icon: <Star className="w-5 h-5" /> }
@@ -57,6 +58,12 @@ const personalInfo = {
 };
 
 const About = () => {
+    const titleRef = useScrollAnimation();
+    const heroRef = useScrollAnimationWithDelay(200);
+    const statsRef = useScrollAnimationWithDelay(400);
+    const expertiseRef = useScrollAnimationWithDelay(600);
+    const ctaRef = useScrollAnimationWithDelay(800);
+
     return (
         <div className="relative py-20 md:py-32 overflow-hidden" id="About">
             
@@ -69,10 +76,12 @@ const About = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
-                <Title title="À propos de moi" />
+                <div ref={titleRef}>
+                    <Title title="À propos de moi" />
+                </div>
                 
                 {/* Section Hero personnelle */}
-                <div className="max-w-6xl mx-auto mt-16">
+                <div ref={heroRef} className="max-w-6xl mx-auto mt-16">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         
                         {/* Image et informations personnelles */}
@@ -181,7 +190,7 @@ const About = () => {
                 </div>
 
                 {/* Statistiques */}
-                <div className="max-w-6xl mx-auto mt-20">
+                <div ref={statsRef} className="max-w-6xl mx-auto mt-20">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center group">
@@ -202,7 +211,7 @@ const About = () => {
                 </div>
 
                 {/* Section expertise */}
-                <div className="max-w-6xl mx-auto mt-20">
+                <div ref={expertiseRef} className="max-w-6xl mx-auto mt-20">
                     <div className="text-center mb-16">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                             Mon expertise
@@ -252,7 +261,7 @@ const About = () => {
                 </div>
 
                 {/* Call to action final */}
-                <div className="max-w-4xl mx-auto mt-20 text-center">
+                <div ref={ctaRef} className="max-w-4xl mx-auto mt-20 text-center">
                     <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
                         <Zap className="w-12 h-12 text-orange-400 mx-auto mb-6" />
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">

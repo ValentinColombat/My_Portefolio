@@ -1,6 +1,7 @@
 import Title from "./Title"
 import { Coffee } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { useScrollAnimation, useScrollAnimationWithDelay, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
@@ -16,8 +17,8 @@ const projects = [
         title: 'Gestionnaire de tâches',
         description: 'Application moderne de gestion de tâches avec interface intuitive et fonctionnalités collaboratives avancées.',
         technologies: ['React', 'Node.js', 'Tailwind CSS'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img1,
         category: 'Web App'
     },
@@ -26,8 +27,8 @@ const projects = [
         title: 'Plateforme E-commerce',
         description: 'Solution e-commerce complète avec paiements sécurisés, gestion d\'inventaire et tableau de bord admin.',
         technologies: ['Next.js', 'TypeScript', 'Prisma'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img2,
         category: 'E-commerce'
     },
@@ -36,8 +37,8 @@ const projects = [
         title: 'Portfolio interactif',
         description: 'Portfolio personnel avec animations fluides, design responsive et expérience utilisateur optimisée.',
         technologies: ['HTML', 'CSS', 'JavaScript'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img3,
         category: 'Portfolio'
     },
@@ -46,8 +47,8 @@ const projects = [
         title: 'Application de Chat',
         description: 'Chat en temps réel avec notifications push, salles privées et système de messagerie avancé.',
         technologies: ['React', 'Socket.io', 'Express.js'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img4,
         category: 'Real-time'
     },
@@ -56,8 +57,8 @@ const projects = [
         title: 'Système de réservation',
         description: 'Plateforme de réservation de salles avec calendrier intégré et gestion des disponibilités.',
         technologies: ['Next.js', 'MongoDB', 'Chakra UI'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img5,
         category: 'SaaS'
     },
@@ -66,16 +67,20 @@ const projects = [
         title: 'Analyseur de sentiment',
         description: 'Outil d\'analyse de sentiment utilisant l\'IA pour traiter et classifier les textes automatiquement.',
         technologies: ['Python', 'Flask', 'NLTK'],
-        demoLink: '#',
-        repoLink: '#',
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat',
         image: img6,
         category: 'AI/ML'
     },
 ];
 
 const Projects = () => {
+    const titleRef = useScrollAnimation();
+    const subtitleRef = useScrollAnimationWithDelay(200);
+    const projectsGridRef = useStaggeredAnimation(projects.length, 150);
+
     return (
-        <div className="relative py-20 md:py-32 overflow-hidden" id="Projects">
+        <div className="relative pt-20 pb-10 md:pt-32 md:pb-16 overflow-hidden" id="Projects">
             
             {/* Grille de fond moderne */}
             <div className="absolute inset-0 grid-background opacity-20"></div>
@@ -87,10 +92,12 @@ const Projects = () => {
             <div className="container mx-auto px-8 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     
-                    <Title title="Mes Projets" />
+                    <div ref={titleRef}>
+                        <Title title="Mes Projets" />
+                    </div>
                     
                     {/* Sous-titre */}
-                    <div className="text-center mb-20">
+                    <div ref={subtitleRef} className="text-center mb-20">
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Découvrez une sélection de mes 
                             <span className="text-orange-400 font-medium"> projets récents</span>, 
@@ -99,7 +106,7 @@ const Projects = () => {
                     </div>
 
                     {/* Grille de projets */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div ref={projectsGridRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                         {projects.map((project) => (
                             <div key={project.id} className="project-card group">
                                 
@@ -111,15 +118,19 @@ const Projects = () => {
                                         className="project-image"
                                     />
                                     
-                                    {/* Overlay au hover */}
+                                       {/* Overlay au hover */}
                                     <div className="project-overlay">
                                         <div className="flex gap-3">
                                             <a href={project.demoLink} 
+                                               target="_blank"
+                                               rel="noopener noreferrer"
                                                className="project-btn-demo">
                                                 <Video className="w-4 h-4" />
                                                 <span>Demo</span>
                                             </a>
                                             <a href={project.repoLink} 
+                                               target="_blank"
+                                               rel="noopener noreferrer"
                                                className="project-btn-code">
                                                 <Github className="w-4 h-4" />
                                             </a>

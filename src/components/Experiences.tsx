@@ -1,4 +1,5 @@
 import Title from "./Title"
+import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation';
 
 import imgCSS from "../assets/techno/css.png";
 import imgJS from "../assets/techno/js.png";
@@ -23,12 +24,17 @@ const skills = [
 ];
 
 const Experiences = () => {
+    const titleRef = useScrollAnimation();
+    const contentRef = useScrollAnimationWithDelay(400);
+
     return (
         <div id="Experiences" className="relative pt-2 md:pt-2 pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
-            <Title title="Projets & Compétences" />
+            <div ref={titleRef}>
+                <Title title="Projets & Compétences" />
+            </div>
             
             {/* Container avec effet glow morphisme */}
-            <div className="relative max-w-[1600px] mx-auto">
+            <div ref={contentRef} className="relative max-w-[1600px] mx-auto">
                 {/* Effet de glow externe */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 via-purple-500/5 to-cyan-500/10 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                 

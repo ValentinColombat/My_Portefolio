@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { sendEmail, saveContactLocally } from "../services/contactService"
+import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation'
 
 const Contact = () => {
     // État pour gérer les données du formulaire
@@ -65,6 +66,10 @@ const Contact = () => {
             setIsSubmitting(false)
         }
     }
+    const headerRef = useScrollAnimation();
+    const infoRef = useScrollAnimationWithDelay(600);
+    const formRef = useScrollAnimationWithDelay(800);
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20">
             
@@ -83,7 +88,7 @@ const Contact = () => {
                 <div className="max-w-6xl mx-auto">
                     
                     {/* Header */}
-                    <div className="text-center mb-16">
+                    <div ref={headerRef} className="text-center mb-16">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                             <span className="hero-gradient-text">Contactez-moi</span>
                         </h1>
@@ -96,7 +101,7 @@ const Contact = () => {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         
                         {/* Informations de contact */}
-                        <div className="space-y-8">
+                        <div ref={infoRef} className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-bold mb-6 text-white">Parlons de votre projet</h2>
                                 <p className="text-white/70 mb-8">
@@ -113,7 +118,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-medium text-white">Email</h3>
-                                        <p className="text-white/60">valentin.colombat@email.com</p>
+                                        <p className="text-white/60">valentincolombat@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -123,7 +128,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-medium text-white">Téléphone</h3>
-                                        <p className="text-white/60">+33 X XX XX XX XX</p>
+                                        <p className="text-white/60">+33 6 72 32 45 97</p>
                                     </div>
                                 </div>
 
@@ -145,14 +150,15 @@ const Contact = () => {
                                     <h3 className="font-medium text-white">Disponibilité</h3>
                                 </div>
                                 <p className="text-white/70">
-                                    Actuellement disponible pour de nouveaux projets. 
-                                    Temps de réponse habituel : 24-48h.
+                                    Actuellement disponible pour de nouveaux projets.
+                                    <br />
+                                    Temps de réponse habituel : 10-15 min.
                                 </p>
                             </div>
                         </div>
 
                         {/* Formulaire de contact */}
-                        <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                        <div ref={formRef} className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
                             <h2 className="text-2xl font-bold mb-6 text-white">Envoyez-moi un message</h2>
                             
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -232,7 +238,7 @@ const Contact = () => {
                                         required
                                         rows={6}
                                         className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors resize-none"
-                                        placeholder="Décrivez votre projet ou votre demande..."
+                                        placeholder="Décrivez votre projet ou votre demande... ou un simple bonjour , on prendra le temps de discuter !"
                                     ></textarea>
                                 </div>
 

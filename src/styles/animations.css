@@ -159,99 +159,121 @@
 }
 
 /* ===============================================
-   ANIMATIONS DE SCROLL (INTERSECTION OBSERVER)
+   ANIMATIONS DE SCROLL PAR SECTION
    =============================================== */
 
-/* État initial - élément caché */
-.scroll-hidden {
+/* Animation : Slide from left avec fade-in */
+.slide-in-left {
   opacity: 0;
-  transform: translateY(25px);
-  transition: all 2.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translateX(-80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* État visible - élément animé */
-.scroll-visible {
+.slide-in-left.visible {
   opacity: 1;
-  transform: translateY(0);
-  transition: all 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(0);
 }
 
-/* Variations d'animations - toutes avec fade-up très progressif */
-.scroll-hidden.fade-up {
+/* Animation : Slide from right avec fade-in */
+.slide-in-right {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  transform: translateX(80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-visible.fade-up {
+.slide-in-right.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
-.scroll-hidden.fade-down {
+/* Animation : Fade-in simple sans mouvement */
+.fade-in {
   opacity: 0;
-  transform: translateY(-20px);
-  transition: all 2.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-visible.fade-down {
+.fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.scroll-hidden.fade-left {
+/* Animation : Slide from bottom avec fade-in */
+.slide-in-bottom {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 2.7s cubic-bezier(0.15, 0.83, 0.66, 1);
+  transform: translateY(60px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-visible.fade-left {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scroll-hidden.fade-right {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 2.7s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
-
-.scroll-visible.fade-right {
+.slide-in-bottom.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.scroll-hidden.scale-up {
+/* Animation : Slide from far left (pour éléments extérieurs) */
+.slide-from-far-left {
   opacity: 0;
-  transform: translateY(25px) scale(0.92);
-  transition: all 3.2s cubic-bezier(0.12, 0.88, 0.6, 1);
+  transform: translateX(-150px);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.scroll-visible.scale-up {
+.slide-from-far-left.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateX(0);
 }
 
-/* Animation avec délai pour effets staggered - très progressifs */
-.scroll-delay-100 { transition-delay: 200ms; }
-.scroll-delay-200 { transition-delay: 500ms; }
-.scroll-delay-300 { transition-delay: 800ms; }
-.scroll-delay-400 { transition-delay: 1100ms; }
-.scroll-delay-500 { transition-delay: 1400ms; }
-
-/* Animation ultra-smooth pour les éléments sensibles */
-.scroll-ultra-smooth {
-  transition: all 3.5s cubic-bezier(0.1, 0.9, 0.5, 1);
+/* Animation : Slide from far right (pour éléments extérieurs) */
+.slide-from-far-right {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.slide-from-far-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
+/* Délais pour effet staggered élégant */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* Animation : Scale-up avec fade-in (pour icônes/badges) */
+.scale-up-fade {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scale-up-fade.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Délais staggered pour multiples éléments */
+.stagger-1 { transition-delay: 50ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 150ms; }
+.stagger-4 { transition-delay: 200ms; }
+.stagger-5 { transition-delay: 250ms; }
+.stagger-6 { transition-delay: 300ms; }
+.stagger-7 { transition-delay: 350ms; }
+.stagger-8 { transition-delay: 400ms; }
+.stagger-9 { transition-delay: 450ms; }
 
 /* Respect des préférences utilisateur */
 @media (prefers-reduced-motion: reduce) {
-  .scroll-hidden,
-  .scroll-visible {
-    transition: opacity 1s ease;
-    transform: none;
+  .slide-in-left,
+  .slide-in-right {
+    transition: opacity 0.8s ease;
+    transform: none !important;
   }
 }

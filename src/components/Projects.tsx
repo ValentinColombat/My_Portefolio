@@ -1,7 +1,6 @@
 import Title from "./Title"
 import { Coffee } from "lucide-react";
 import { Link } from 'react-router-dom';
-import { useScrollAnimation, useScrollAnimationWithDelay, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 import img1 from '../assets/projects/1.png';
 import img2 from '../assets/projects/2.png';
@@ -75,9 +74,6 @@ const projects = [
 ];
 
 const Projects = () => {
-    const titleRef = useScrollAnimation();
-    const subtitleRef = useScrollAnimationWithDelay(200);
-    const projectsGridRef = useStaggeredAnimation(projects.length, 150);
 
     return (
         <div className="relative pt-20 pb-10 md:pt-32 md:pb-16 overflow-hidden" id="Projects">
@@ -92,12 +88,12 @@ const Projects = () => {
             <div className="container mx-auto px-8 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     
-                    <div ref={titleRef}>
+                    <div>
                         <Title title="Mes Projets" />
                     </div>
                     
                     {/* Sous-titre */}
-                    <div ref={subtitleRef} className="text-center mb-20">
+                    <div className="text-center mb-20">
                         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
                             Découvrez une sélection de mes 
                             <span className="text-orange-400 font-medium"> projets récents</span>, 
@@ -106,7 +102,7 @@ const Projects = () => {
                     </div>
 
                     {/* Grille de projets */}
-                    <div ref={projectsGridRef} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                         {projects.map((project) => (
                             <div key={project.id} className="project-card group">
                                 

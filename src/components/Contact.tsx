@@ -2,9 +2,25 @@ import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { sendEmail, saveContactLocally } from "../services/contactService"
-import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
 const Contact = () => {
+    // Hooks d'animation
+    const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+    
+    const { elementRef: contactInfoRef, isVisible: contactInfoVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+    
+    const { elementRef: formRef, isVisible: formVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+
     // État pour gérer les données du formulaire
     const [formData, setFormData] = useState({
         firstName: '',
@@ -66,9 +82,6 @@ const Contact = () => {
             setIsSubmitting(false)
         }
     }
-    const headerRef = useScrollAnimation();
-    const infoRef = useScrollAnimationWithDelay(600);
-    const formRef = useScrollAnimationWithDelay(800);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-20">
@@ -88,7 +101,7 @@ const Contact = () => {
                 <div className="max-w-6xl mx-auto">
                     
                     {/* Header */}
-                    <div ref={headerRef} className="text-center mb-16">
+                    <div ref={headerRef} className={`text-center mb-16 fade-in ${headerVisible ? 'visible' : ''}`}>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                             <span className="hero-gradient-text">Contactez-moi</span>
                         </h1>
@@ -101,7 +114,7 @@ const Contact = () => {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                         
                         {/* Informations de contact */}
-                        <div ref={infoRef} className="space-y-8">
+                        <div ref={contactInfoRef} className={`space-y-8 slide-in-left delay-200 ${contactInfoVisible ? 'visible' : ''}`}>
                             <div>
                                 <h2 className="text-2xl font-bold mb-6 text-white">Parlons de votre projet</h2>
                                 <p className="text-white/70 mb-8">
@@ -158,7 +171,7 @@ const Contact = () => {
                         </div>
 
                         {/* Formulaire de contact */}
-                        <div ref={formRef} className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                        <div ref={formRef} className={`bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 slide-in-right delay-300 ${formVisible ? 'visible' : ''}`}>
                             <h2 className="text-2xl font-bold mb-6 text-white">Envoyez-moi un message</h2>
                             
                             <form onSubmit={handleSubmit} className="space-y-6">

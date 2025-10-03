@@ -1,5 +1,5 @@
-import Title from "./Title"
-import { useScrollAnimation, useScrollAnimationWithDelay } from '../hooks/useScrollAnimation';
+import Title from "./Title";
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 import imgCSS from "../assets/techno/css.png";
 import imgJS from "../assets/techno/js.png";
@@ -24,17 +24,26 @@ const skills = [
 ];
 
 const Experiences = () => {
-    const titleRef = useScrollAnimation();
-    const contentRef = useScrollAnimationWithDelay(400);
+    // Hook pour la section skills (icônes)
+    const { elementRef: skillsRef, isVisible: skillsVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+
+    // Hook pour la section texte
+    const { elementRef: textRef, isVisible: textVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
 
     return (
         <div id="Experiences" className="relative pt-2 md:pt-2 pb-20 md:pb-32 px-4 sm:px-6 lg:px-8">
-            <div ref={titleRef}>
-                <Title title="Projets & Compétences" />
+            <div>
+                <Title title="Experiences" />
             </div>
             
-            {/* Container avec effet glow morphisme */}
-            <div ref={contentRef} className="relative max-w-[1600px] mx-auto">
+            {/* Contenu principal */}
+            <div className="relative max-w-[1600px] mx-auto">
                 {/* Effet de glow externe */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 via-purple-500/5 to-cyan-500/10 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
                 
@@ -47,9 +56,9 @@ const Experiences = () => {
                 {/* Container principal avec glassmorphism */}
                 <div className="relative bg-slate-800/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
                     <div className="flex flex-col-reverse lg:flex-row justify-center items-center">
-                <div className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center lg:w-1/3 mt-6 lg:mt-0">
+                <div ref={skillsRef} className="flex flex-wrap gap-3 sm:gap-4 justify-center items-center lg:w-1/3 mt-6 lg:mt-0">
                     {skills.map((skill) => (
-                        <div key={skill.id} className="flex justify-center items-center flex-col">
+                        <div key={skill.id} className={`flex justify-center items-center flex-col scale-up-fade stagger-${skill.id} ${skillsVisible ? 'visible' : ''}`}>
                             <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 p-2 rounded-full border-2 border-accent">
                                 <img src={skill.image} alt={skill.name}
                                     className="object-cover rounded-full h-full w-full"
@@ -60,7 +69,7 @@ const Experiences = () => {
                     ))}
                 </div>
 
-                <div className="lg:ml-4 w-full lg:w-2/3">
+                <div ref={textRef} className={`lg:ml-4 w-full lg:w-2/3 slide-in-right delay-200 ${textVisible ? 'visible' : ''}`}>
                     <div className="bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10">
                         <div className="space-y-6">
                             <div className="text-center mb-8">

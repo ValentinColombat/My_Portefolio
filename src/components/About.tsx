@@ -1,7 +1,7 @@
 import Title from "./Title"
 import img from '../assets/projects/img2.jpg';
 import { Link } from 'react-router-dom';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { 
     Code2, 
     Rocket, 
@@ -58,8 +58,29 @@ const personalInfo = {
 };
 
 const About = () => {
-    // Animation sur toute la section About
-    const aboutSectionRef = useScrollAnimation();
+    // Hook pour détecter quand la section Hero est visible
+    const { elementRef: heroRef, isVisible: heroVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+
+    // Hook pour la section Statistiques
+    const { elementRef: statsRef, isVisible: statsVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+
+    // Hook pour la section Expertise
+    const { elementRef: expertiseRef, isVisible: expertiseVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
+
+    // Hook pour la section Call to Action
+    const { elementRef: ctaRef, isVisible: ctaVisible } = useIntersectionObserver({
+        threshold: 0.2,
+        triggerOnce: true
+    });
 
     return (
         <div className="relative py-20 md:py-32 overflow-hidden" id="About">
@@ -71,16 +92,16 @@ const About = () => {
                 <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
             </div>
 
-            <div ref={aboutSectionRef} className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <Title title="À propos de moi" />
                 
                 {/* Section Hero personnelle */}
-                <div className="max-w-6xl mx-auto mt-16">
+                <div ref={heroRef} className="max-w-6xl mx-auto mt-16">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         
                         {/* Image et informations personnelles */}
-                        <div className="relative">
+                        <div className={`relative slide-in-left ${heroVisible ? 'visible' : ''}`}>
                             {/* Image principale avec effets */}
                             <div className="relative group">
                                 <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -119,7 +140,7 @@ const About = () => {
                         </div>
 
                         {/* Contenu textuel */}
-                        <div className="space-y-8">
+                        <div className={`space-y-8 slide-in-right delay-200 ${heroVisible ? 'visible' : ''}`}>
                             {/* Introduction */}
                             <div>
                                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -160,7 +181,7 @@ const About = () => {
                             </div>
 
                             {/* CTA */}
-                            <div className="flex flex-wrap gap-4 pt-4">
+                            <div className={`flex flex-wrap gap-4 pt-4 fade-in delay-500 ${heroVisible ? 'visible' : ''}`}>
                                 {/* Bouton Contact - avec Link */}
                                 <Link 
                                     to="/contact"
@@ -185,7 +206,7 @@ const About = () => {
                 </div>
 
                 {/* Statistiques */}
-                <div className="max-w-6xl mx-auto mt-20">
+                <div ref={statsRef} className={`max-w-6xl mx-auto mt-20 slide-in-bottom ${statsVisible ? 'visible' : ''}`}>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center group">
@@ -206,7 +227,7 @@ const About = () => {
                 </div>
 
                 {/* Section expertise */}
-                <div className="max-w-6xl mx-auto mt-20">
+                <div ref={expertiseRef} className="max-w-6xl mx-auto mt-20">
                     <div className="text-center mb-16">
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                             Mon expertise
@@ -217,8 +238,19 @@ const About = () => {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {expertise.map((item) => (
-                            <div key={item.id} className="group">
+                        {expertise.map((item) => {
+                            // Déterminer la classe d'animation selon la position
+                            let animationClass = '';
+                            if (item.id === 1) {
+                                animationClass = 'slide-from-far-left';
+                            } else if (item.id === 2) {
+                                animationClass = 'fade-in delay-200';
+                            } else if (item.id === 3) {
+                                animationClass = 'slide-from-far-right delay-100';
+                            }
+                            
+                            return (
+                                <div key={item.id} className={`group ${animationClass} ${expertiseVisible ? 'visible' : ''}`}>
                                 <div className="relative bg-slate-800/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 h-full">
                                     
                                     {/* Gradient background */}
@@ -251,12 +283,13 @@ const About = () => {
                                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl"></div>
                                 </div>
                             </div>
-                        ))}
+                        );
+                        })}
                     </div>
                 </div>
 
                 {/* Call to action final */}
-                <div className="max-w-4xl mx-auto mt-20 text-center">
+                <div ref={ctaRef} className={`max-w-4xl mx-auto mt-20 text-center slide-in-bottom ${ctaVisible ? 'visible' : ''}`}>
                     <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
                         <Zap className="w-12 h-12 text-orange-400 mx-auto mb-6" />
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">

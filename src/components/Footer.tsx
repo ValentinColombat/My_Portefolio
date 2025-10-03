@@ -1,11 +1,14 @@
 import { Container, Linkedin, Twitter, Youtube, Github, PackageCheck } from "lucide-react"
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
 const Footer = () => {
-    const footerRef = useScrollAnimation();
+    const { elementRef: footerRef, isVisible: footerVisible } = useIntersectionObserver({
+        threshold: 0.3,
+        triggerOnce: true
+    });
 
     return (
-        <footer ref={footerRef} className="footer footer-center p-4 sm:p-6 lg:p-10 flex flex-col items-center justify-center">
+        <footer ref={footerRef} className={`footer footer-center p-4 sm:p-6 lg:p-10 flex flex-col items-center justify-center slide-in-bottom ${footerVisible ? 'visible' : ''}`}>
             <aside className="text-center mb-4">
                 <Container className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" />
                 <p className="font-bold text-sm sm:text-base mb-1">

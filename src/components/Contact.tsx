@@ -4,6 +4,31 @@ import { useState } from "react"
 import { sendEmail, saveContactLocally } from "../services/contactService"
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
+// Constante pour les classes CSS des inputs
+const INPUT_CLASSES = "w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
+
+// Configuration des méthodes de contact
+const contactMethods = [
+    { 
+        icon: Mail, 
+        gradient: 'from-orange-400 to-amber-500', 
+        title: 'Email', 
+        value: 'valentincolombat@gmail.com' 
+    },
+    { 
+        icon: Phone, 
+        gradient: 'from-green-400 to-emerald-500', 
+        title: 'Téléphone', 
+        value: '+33 6 72 32 45 97' 
+    },
+    { 
+        icon: MapPin, 
+        gradient: 'from-purple-400 to-violet-500', 
+        title: 'Localisation', 
+        value: 'Région de Lille, France' 
+    }
+]
+
 const Contact = () => {
     // Hooks d'animation
     const { elementRef: headerRef, isVisible: headerVisible } = useIntersectionObserver({
@@ -125,35 +150,20 @@ const Contact = () => {
 
                             {/* Méthodes de contact */}
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-orange-400/30 transition-colors">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-amber-500 rounded-lg flex items-center justify-center">
-                                        <Mail className="w-6 h-6 text-white" />
+                                {contactMethods.map(({ icon: Icon, gradient, title, value }) => (
+                                    <div 
+                                        key={title}
+                                        className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-orange-400/30 transition-colors"
+                                    >
+                                        <div className={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center`}>
+                                            <Icon className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-white">{title}</h3>
+                                            <p className="text-white/60">{value}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="font-medium text-white">Email</h3>
-                                        <p className="text-white/60">valentincolombat@gmail.com</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-orange-400/30 transition-colors">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
-                                        <Phone className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium text-white">Téléphone</h3>
-                                        <p className="text-white/60">+33 6 72 32 45 97</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-orange-400/30 transition-colors">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-violet-500 rounded-lg flex items-center justify-center">
-                                        <MapPin className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-medium text-white">Localisation</h3>
-                                        <p className="text-white/60">Région de Lille, France</p>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
 
                             {/* Disponibilité */}
@@ -187,7 +197,7 @@ const Contact = () => {
                                             value={formData.firstName}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
+                                            className={INPUT_CLASSES}
                                             placeholder="Votre prénom"
                                         />
                                     </div>
@@ -202,7 +212,7 @@ const Contact = () => {
                                             value={formData.lastName}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
+                                            className={INPUT_CLASSES}
                                             placeholder="Votre nom"
                                         />
                                     </div>
@@ -219,7 +229,7 @@ const Contact = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
+                                        className={INPUT_CLASSES}
                                         placeholder="votre@email.com"
                                     />
                                 </div>
@@ -234,7 +244,7 @@ const Contact = () => {
                                         name="subject"
                                         value={formData.subject}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors"
+                                        className={INPUT_CLASSES}
                                         placeholder="De quoi souhaitez-vous parler ?"
                                     />
                                 </div>
@@ -250,7 +260,7 @@ const Contact = () => {
                                         onChange={handleChange}
                                         required
                                         rows={6}
-                                        className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors resize-none"
+                                        className={`${INPUT_CLASSES} resize-none`}
                                         placeholder="Décrivez votre projet ou votre demande... ou un simple bonjour , on prendra le temps de discuter !"
                                     ></textarea>
                                 </div>

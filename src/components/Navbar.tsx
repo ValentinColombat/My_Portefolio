@@ -1,6 +1,15 @@
 import { Container } from "lucide-react"
 import { useEffect, useState } from "react"
 
+const NAV_ITEM_CLASSES = "nav-item-modern px-4 py-2 rounded-xl font-medium transition-all duration-300";
+
+const navItems = [
+    { href: "#Home", label: "Accueil" },
+    { href: "#About", label: "À propos" },
+    { href: "#Experiences", label: "Expériences" },
+    { href: "#Projects", label: "Projets" }
+];
+
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
 
@@ -27,37 +36,13 @@ const Navbar = () => {
             </a>
 
             <ul className="hidden md:flex space-x-2">
-                <li>
-                    <a href="#Home"
-                        className="nav-item-modern px-4 py-2 rounded-xl font-medium transition-all duration-300"
-                    >
-                        Accueil
-                    </a>
-                </li>
-                <li>
-                    <a href="#About"
-                        className="nav-item-modern px-4 py-2 rounded-xl font-medium transition-all duration-300"
-                    >
-                        À propos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#Experiences"
-                        className="nav-item-modern px-4 py-2 rounded-xl font-medium transition-all duration-300"
-                    >
-                        Expériences
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#Projects"
-                        className="nav-item-modern px-4 py-2 rounded-xl font-medium transition-all duration-300"
-                    >
-                        Projets
-                    </a>
-                </li>
-
+                {navItems.map((item) => (
+                    <li key={item.href}>
+                        <a href={item.href} className={NAV_ITEM_CLASSES}>
+                            {item.label}
+                        </a>
+                    </li>
+                ))}
             </ul>
 
         </div>

@@ -73,13 +73,13 @@ const Experiences = () => {
                     <div className="bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-white/10">
                         <div className="space-y-6">
                             <div className="text-center mb-8">
-                                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4">
                                     Qui suis-je vraiment ?
                                 </h3>
                                 <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-purple-500 mx-auto rounded-full"></div>
                             </div>
                             
-                            <div className="space-y-4 text-white/80 leading-relaxed">
+                            <div className="space-y-4 text-sm sm:text-base text-white/80 leading-relaxed">
                                 <p>
                                     À <strong className="text-orange-400">30 ans</strong>, j'ai découvert ma véritable passion dans le développement web. 
                                     Depuis plus d'un an, je code <strong className="text-white">quotidiennement</strong> avec une forte détermination. 
@@ -87,13 +87,13 @@ const Experiences = () => {
                                     qu'offre le code pour résoudre des problèmes concrets.
                                 </p>
                                 
-                                <p>
+                                <p className="hidden sm:block">
                                     Mon approche ? <strong className="text-white">Méthodique et rigoureuse</strong>. Je préfère maîtriser solidement 
                                     les bases plutôt que de survoler une multitude de technologies. 
                                     Mes proches me décrivent comme quelqu'un de <strong className="text-orange-400">fiable, réfléchi et juste</strong>.
                                 </p>
                                 
-                                <p>
+                                <p className="hidden sm:block">
                                     Grand sportif, je pratique <strong className="text-white">le football américain</strong>, j'apporte cette philosophie d'équipe 
                                     dans mes projets : <strong className="text-orange-400">engagement total, communication claire</strong> et confiance mutuelle. 
                                     Dans ce sport, l'individu n'existe que par l'équipe - une leçon que j'applique au quotidien.
@@ -106,17 +106,17 @@ const Experiences = () => {
                                 </p>
                                 
                                 <div className="bg-gradient-to-r from-orange-500/10 to-purple-500/10 p-4 rounded-xl border border-orange-500/20 mt-6">
-                                    <p className="text-center text-white font-medium italic">
+                                    <p className="text-center text-sm sm:text-base text-white font-medium italic">
                                         "Je ne cherche pas juste un projet ou un poste, je veux <strong className="text-orange-400">intégrer une équipe</strong>, 
                                         partager ses valeurs et mettre ma passion au service d'un objectif commun qui a du sens."
                                     </p>
                                 </div>
                                 
                                 <div className="text-center mt-8">
-                                    <p className="text-white/60 text-sm">
+                                    <p className="text-white/60 text-xs sm:text-sm">
                                         🚀 Disponible pour missions freelance et recherche active d'un poste
                                     </p>
-                                    <p className="text-white/60 text-sm mt-2">
+                                    <p className="text-white/60 text-xs sm:text-sm mt-2">
                                         📍 Région de Lille - Ouvert à la mobilité
                                     </p>
                                 </div>

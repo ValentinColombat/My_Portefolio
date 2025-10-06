@@ -442,7 +442,7 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ## Contact
 
 **Valentin Colombat**
-- Portfolio: [Your deployed URL]
+- Portfolio: [Portfolio](https://valentincolombat.netlify.app)
 - GitHub: [@ValentinColombat](https://github.com/ValentinColombat)
 - Email: valentincolombat@gmail.com
 

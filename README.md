@@ -94,7 +94,7 @@ Automatically intercepts all internal link clicks and applies smooth transitions
 - Experiences section reduces from 4 to 2 paragraphs on mobile
 - Navbar displays "Valentin C." on mobile, full name on desktop
 
-**Spacing Optimization:**
+**Spacing - Optimization:**
 - Mobile: `py-12`, `gap-4`, `space-y-4`
 - Desktop: `py-20`, `gap-8`, `space-y-8`
 - Reduces vertical space consumption on small screens

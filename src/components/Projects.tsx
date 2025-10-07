@@ -3,74 +3,74 @@ import { Coffee } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
-import img1 from '../assets/projects/1.png';
-import img2 from '../assets/projects/2.png';
-import img3 from '../assets/projects/3.png';
+import img1 from '../assets/projects/Présentation Ghibli.jpg';
+import img2 from '../assets/projects/Space-invader.png';
+import img3 from '../assets/projects/Portfolio.png';
 import img4 from '../assets/projects/4.png';
-import img5 from '../assets/projects/5.png';
-import img6 from '../assets/projects/6.png';
+import img5 from '../assets/projects/en-travaux.jpg';
+import img6 from '../assets/projects/dice-roller.jpg';
 import { Github,Video} from "lucide-react";
 
 const projects = [
     {
         id: 1,
-        title: 'Gestionnaire de tâches',
-        description: 'Application moderne de gestion de tâches avec interface intuitive et fonctionnalités collaboratives avancées.',
-        technologies: ['React', 'Node.js', 'Tailwind CSS'],
-        demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
-        image: img1,
-        category: 'Web App'
-    },
-    {
-        id: 2,
-        title: 'Plateforme E-commerce',
-        description: 'Solution e-commerce complète avec paiements sécurisés, gestion d\'inventaire et tableau de bord admin.',
-        technologies: ['Next.js', 'TypeScript', 'Prisma'],
-        demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
-        image: img2,
-        category: 'E-commerce'
-    },
-    {
-        id: 3,
         title: 'Portfolio interactif',
         description: 'Portfolio personnel avec animations fluides, design responsive et expérience utilisateur optimisée.',
-        technologies: ['HTML', 'CSS', 'JavaScript'],
+        technologies: ['React', 'TypeScript', 'Tailwind CSS'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/My_Portefolio',
         image: img3,
         category: 'Portfolio'
     },
     {
+        id: 2,
+        title: 'Médiathèque Studio Ghibli',
+        description: `Application web pour explorer les films du Studio Ghibli avec filtres, recherches et détails complets.`,
+        technologies: ['Express.js', 'EJS', 'JavaScript'],
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/Bibliotheque-Studio-Ghibli',
+        image: img1,
+        category: 'Web App'
+    },
+    {
+        id: 3,
+        title: 'Space-Invaders',
+        description: 'Application web interactive de dessin en pixel art inspirée du célèbre jeu Space Invaders.',
+        technologies: ['HTML', 'CSS', 'JavaScript'],
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/Space-invader',
+        image: img2,
+        category: 'Game'
+    },
+    {
         id: 4,
         title: 'Application de Chat',
-        description: 'Chat en temps réel avec notifications push, salles privées et système de messagerie avancé.',
-        technologies: ['React', 'Socket.io', 'Express.js'],
+        description: "Application de chat avancée construite avec Svelte 5, Vite et PocketBase, qui utilise l'API Mistral",
+        technologies: ['Svelte', 'API', 'PocketBase'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/O-chat',
         image: img4,
         category: 'Real-time'
     },
     {
         id: 5,
-        title: 'Système de réservation',
-        description: 'Plateforme de réservation de salles avec calendrier intégré et gestion des disponibilités.',
-        technologies: ['Next.js', 'MongoDB', 'Chakra UI'],
+        title: 'Dice-Roller',
+        description: 'Application de simulation de lancer de dés qui permet de faire jouer deux adversaires : un joueur et un croupier',
+        technologies: ['HTML', 'CSS', 'Javascript'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
-        image: img5,
-        category: 'SaaS'
+        repoLink: 'https://github.com/ValentinColombat/Dice-roller',
+        image: img6,
+        category: 'Game'
     },
     {
         id: 6,
-        title: 'Analyseur de sentiment',
-        description: 'Outil d\'analyse de sentiment utilisant l\'IA pour traiter et classifier les textes automatiquement.',
-        technologies: ['Python', 'Flask', 'NLTK'],
+        title: 'Projet en cours',
+        description: 'App IOS: Application mobile pour diffuser des nouvelles positives et inspirantes.',
+        technologies: ['IOS', 'APP'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
         repoLink: 'https://github.com/ValentinColombat',
-        image: img6,
-        category: 'AI/ML'
+        image: img5,
+        category: 'App IOS'
     },
 ];
 

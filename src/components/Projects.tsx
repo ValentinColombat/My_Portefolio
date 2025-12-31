@@ -68,7 +68,7 @@ const projects = [
         description: 'App IOS: Application mobile pour diffuser des nouvelles positives et inspirantes.',
         technologies: ['IOS', 'APP'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/UpNews-backend',
         image: img5,
         category: 'App IOS'
     },

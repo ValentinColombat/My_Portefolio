@@ -27,7 +27,7 @@ const expertise = [
         id: 1,
         title: "Développement Web Frontend",
         description: "Maîtrise des fondamentaux solides : HTML, CSS, JavaScript. Apprentissage de React pour créer des interfaces modernes et interactives.",
-        skills: ["HTML", "CSS", "JavaScript", "React (en cours)"],
+        skills: ["HTML", "CSS", "JavaScript", "React", "Swift UI"],
         icon: <Code2 className="w-8 h-8" />,
         color: "from-blue-500 to-cyan-500"
     },
@@ -35,7 +35,7 @@ const expertise = [
         id: 2,
         title: "Développement Backend & BDD",
         description: "Création d'APIs avec Node.js et gestion de bases de données SQL. Focus sur des solutions efficaces et bien structurées.",
-        skills: ["Node.js", "SQL", "APIs REST", "Architecture"],
+        skills: ["Node.js", "SQL", "APIs REST", "Supabase"],
         icon: <Rocket className="w-8 h-8" />,
         color: "from-green-500 to-emerald-500"
     },
@@ -43,7 +43,7 @@ const expertise = [
         id: 3,
         title: "Apprentissage & Méthode",
         description: "Approche méthodique et rigoureuse. Capacité d'adaptation rapide aux nouvelles technologies avec un focus sur la qualité.",
-        skills: ["Documentation", "Git", "Workflow", "Problem Solving"],
+        skills: ["Documentation", "Git", "Méthode Agile", "Docker"],
         icon: <Palette className="w-8 h-8" />,
         color: "from-purple-500 to-pink-500"
     }

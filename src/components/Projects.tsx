@@ -24,6 +24,16 @@ const projects = [
     },
     {
         id: 2,
+        title: 'Projet en cours',
+        description: 'App IOS: Application mobile pour diffuser des nouvelles positives et inspirantes.',
+        technologies: ['IOS', 'APP'],
+        demoLink: 'https://www.youtube.com/@ValentinColombat',
+        repoLink: 'https://github.com/ValentinColombat/UpNews-backend',
+        image: img5,
+        category: 'App IOS'
+    },
+    {
+        id: 3,
         title: 'Médiathèque Studio Ghibli',
         description: `Application web pour explorer les films du Studio Ghibli avec filtres, recherches et détails complets.`,
         technologies: ['Express.js', 'EJS', 'JavaScript'],
@@ -33,7 +43,7 @@ const projects = [
         category: 'Web App'
     },
     {
-        id: 3,
+        id: 4,
         title: 'Space-Invaders',
         description: 'Application web interactive de dessin en pixel art inspirée du célèbre jeu Space Invaders.',
         technologies: ['HTML', 'CSS', 'JavaScript'],
@@ -43,7 +53,7 @@ const projects = [
         category: 'Game'
     },
     {
-        id: 4,
+        id: 5,
         title: 'BlablaBook',
         description: "Une plateforme de partage de lectures entre utilisateurs ",
         technologies: ['Svelte', 'JavaScript', 'Docker'],
@@ -53,7 +63,7 @@ const projects = [
         category: 'Web App'
     },
     {
-        id: 5,
+        id: 6,
         title: 'Dice-Roller',
         description: 'Application de simulation de lancer de dés qui permet de faire jouer deux adversaires : un joueur et un croupier',
         technologies: ['HTML', 'CSS', 'Javascript'],
@@ -61,17 +71,7 @@ const projects = [
         repoLink: 'https://github.com/ValentinColombat/Dice-roller',
         image: img6,
         category: 'Game'
-    },
-    {
-        id: 6,
-        title: 'Projet en cours',
-        description: 'App IOS: Application mobile pour diffuser des nouvelles positives et inspirantes.',
-        technologies: ['IOS', 'APP'],
-        demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat/UpNews-backend',
-        image: img5,
-        category: 'App IOS'
-    },
+    }
 ];
 
 const Projects = () => {

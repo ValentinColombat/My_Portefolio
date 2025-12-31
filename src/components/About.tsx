@@ -51,7 +51,7 @@ const expertise = [
 
 const personalInfo = {
     name: "Valentin",
-    role: "Développeur Web Junior",
+    role: "Développeur Web & Concepteur d'applications",
     location: "Région de Lille et ses alentours",
     experience: "Je code tous les jours",
     philosophy: "L'innovation naît de la rencontre entre créativité et rigueur technique"

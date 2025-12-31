@@ -26,7 +26,7 @@ const projects = [
         id: 2,
         title: 'Projet en cours',
         description: 'App IOS: Application mobile pour diffuser des nouvelles positives et inspirantes.',
-        technologies: ['IOS', 'APP'],
+        technologies: ['IOS', 'APP', 'SWIFT UI', 'SUPABASE'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
         repoLink: 'https://github.com/ValentinColombat/UpNews-backend',
         image: img5,

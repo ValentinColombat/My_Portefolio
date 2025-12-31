@@ -9,6 +9,7 @@ import img3 from '../assets/projects/Portfolio.png';
 import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/en-travaux.jpg';
 import img6 from '../assets/projects/dice-roller.jpg';
+import img7 from '../assets/projects/blablabook.jpg';
 import { Github,Video} from "lucide-react";
 
 const projects = [
@@ -44,13 +45,13 @@ const projects = [
     },
     {
         id: 4,
-        title: 'Application de Chat',
-        description: "Application de chat avancée construite avec Svelte 5, Vite et PocketBase, qui utilise l'API Mistral",
-        technologies: ['Svelte', 'API', 'PocketBase'],
+        title: 'BlablaBook',
+        description: "Une plateforme de partage de lectures entre utilisateurs ",
+        technologies: ['Svelte', 'JavaScript', 'Docker'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
-        repoLink: 'https://github.com/ValentinColombat/O-chat',
-        image: img4,
-        category: 'Real-time'
+        repoLink: 'https://github.com/ValentinColombat/Blablabook',
+        image: img7,
+        category: 'Web App'
     },
     {
         id: 5,

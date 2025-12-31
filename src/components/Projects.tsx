@@ -9,7 +9,7 @@ import img3 from '../assets/projects/Portfolio.png';
 import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/en-travaux.jpg';
 import img6 from '../assets/projects/dice-roller.jpg';
-import img7 from '../assets/projects/blablabook.jpg';
+import img8 from '../assets/projects/blablabook.jpg';
 import { Github,Video} from "lucide-react";
 
 const projects = [
@@ -50,7 +50,7 @@ const projects = [
         technologies: ['Svelte', 'JavaScript', 'Docker'],
         demoLink: 'https://www.youtube.com/@ValentinColombat',
         repoLink: 'https://github.com/ValentinColombat/Blablabook',
-        image: img7,
+        image: img8,
         category: 'Web App'
     },
     {

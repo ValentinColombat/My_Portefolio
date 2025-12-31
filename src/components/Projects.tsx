@@ -6,7 +6,6 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import img1 from '../assets/projects/Présentation Ghibli.jpg';
 import img2 from '../assets/projects/Space-invader.png';
 import img3 from '../assets/projects/Portfolio.png';
-import img4 from '../assets/projects/4.png';
 import img5 from '../assets/projects/en-travaux.jpg';
 import img6 from '../assets/projects/dice-roller.jpg';
 import img8 from '../assets/projects/blablabook.jpg';

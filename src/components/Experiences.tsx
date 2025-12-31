@@ -88,8 +88,7 @@ const Experiences = () => {
                                 </p>
                                 
                                 <p className="hidden sm:block">
-                                    Mon approche ? <strong className="text-white">Méthodique et rigoureuse</strong>. Je préfère maîtriser solidement 
-                                    les bases plutôt que de survoler une multitude de technologies. 
+                                    Mon approche ? <strong className="text-white">Méthodique et rigoureuse</strong>.
                                     Mes proches me décrivent comme quelqu'un de <strong className="text-orange-400">fiable, réfléchi et juste</strong>.
                                 </p>
                                 
@@ -100,7 +99,7 @@ const Experiences = () => {
                                 </p>
                                 
                                 <p>
-                                    Ce qui me différencie ? <strong className="text-white">Vous n'aurez jamais besoin de me répéter les choses deux fois</strong>. 
+                                    Ce qui me différencie ? 
                                     Je comprends les sous-entendus, saisis les enjeux de fond et cible justement <strong className="text-orange-400"> vos attentes et besoins.    
                                     </strong>
                                 </p>

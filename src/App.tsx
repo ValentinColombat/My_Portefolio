@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { LoadingProvider } from './context/LoadingContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -43,14 +44,14 @@ function HomePage() {
 
 export default function App() {
   return (
-    <>
-    <ScrollToTop />
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/projects/upnews" element={<ProjectDetail />} />
-      <Route path="/projects/portfolio" element={<ProjectDetailPortfolio />} />
-    </Routes>
-    </>
+    <LoadingProvider>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/projects/upnews" element={<ProjectDetail />} />
+        <Route path="/projects/portfolio" element={<ProjectDetailPortfolio />} />
+      </Routes>
+    </LoadingProvider>
   )
 }

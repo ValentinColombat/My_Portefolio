@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useLoading } from '../context/LoadingContext'
 import heroImg from '../assets/portfolio_kodo.webp'
 
 const navItems = [
@@ -11,6 +12,8 @@ const navItems = [
 const services = ['Application & Site Web', 'Automatisation', "Intégration IA"];
 
 const Home = () => {
+    const { setReady } = useLoading()
+
     return (
         <div id="Home" className="relative min-h-screen overflow-hidden flex flex-col">
 
@@ -18,6 +21,7 @@ const Home = () => {
             <img
                 src={heroImg}
                 alt="Valentin Colombat"
+                onLoad={setReady}
                 className="absolute inset-0 w-full h-full object-cover object-center"
             />
 

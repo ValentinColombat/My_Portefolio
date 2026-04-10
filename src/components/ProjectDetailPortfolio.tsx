@@ -150,7 +150,7 @@ const ProjectDetailPortfolio = () => {
                     <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-14">Un site pensé pour vos clients,<br className="hidden md:block" /> pas pour les développeurs.</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {features.map(({ number, icon: Icon, title, description }, i) => (
+                        {features.map(({ number, title, description }, i) => (
                             <div key={i} className={`stagger-${i + 1}`}>
                                 <p className="text-6xl font-black text-amber-500 mb-2 leading-none">{number}</p>
                                 <div className="flex items-center gap-2 mb-3">

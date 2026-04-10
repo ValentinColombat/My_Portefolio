@@ -2,12 +2,12 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { GitBranch, ExternalLink } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
-import img1 from '../assets/projects/presentation-ghibli.jpg';
-import img2 from '../assets/projects/Space-invader.png';
-import img3 from '../assets/projects/back_boutique.png';
-import img5 from '../assets/projects/back_upnews.png';
+import img1 from '../assets/projects/presentation-ghibli.webp';
+import img2 from '../assets/projects/Space-invader.webp';
+import img3 from '../assets/projects/back_boutique.webp';
+import img5 from '../assets/projects/back_upnews.webp';
 import img6 from '../assets/projects/dice-roller.jpg';
-import img8 from '../assets/projects/blablabook.jpg';
+import img8 from '../assets/projects/blablabook.webp';
 
 const projects = [
     {

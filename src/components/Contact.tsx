@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react"
-import pandaImg from '../assets/portfolio_mail.png'
+import pandaImg from '../assets/portfolio_mail.webp'
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { sendEmail, saveContactLocally, type ContactFormData } from "../services/contactService"

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import heroImg from '../assets/portfolio_kodo.png'
+import heroImg from '../assets/portfolio_kodo.webp'
 
 const navItems = [
     { href: "#Home",     label: "Accueil",      external: false },

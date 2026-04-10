@@ -1,7 +1,7 @@
 import { ArrowLeft, MousePointer, Star, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
-import img3 from '../assets/projects/back_boutique.png'
+import img3 from '../assets/projects/back_boutique.webp'
 
 const stats = [
     { value: '3 sec', label: 'C\'est le temps qu\'un visiteur prend pour se faire une première impression de votre site' },

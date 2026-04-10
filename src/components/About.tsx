@@ -1,5 +1,5 @@
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import persoImg from '../assets/portfolio_us.png';
+import persoImg from '../assets/portfolio_us.webp';
 
 
 const About = () => {

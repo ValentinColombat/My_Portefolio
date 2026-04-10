@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import bgImg from '../assets/portfolio_kodosun.png';
+import bgImg from '../assets/portfolio_kodosun.webp';
 
 const CTASection = () => {
     const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2, triggerOnce: true });

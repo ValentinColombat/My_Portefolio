@@ -1,7 +1,7 @@
 import { ArrowLeft, ExternalLink, FileDown, Quote } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
-import img5 from '../assets/projects/back_upnews.png'
+import img5 from '../assets/projects/back_upnews.webp'
 
 const stats = [
     { value: '77%', label: 'des 18-24 ans consultent leur smartphone dès le réveil' },

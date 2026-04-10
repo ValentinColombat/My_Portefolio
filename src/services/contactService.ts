@@ -1,8 +1,5 @@
 import emailjs from '@emailjs/browser'
-import { emailjsConfig } from '../config/emailjs'
-
-// Initialiser EmailJS
-emailjs.init(emailjsConfig.publicKey)
+import { getEmailjsConfig, isEmailjsConfigured } from '../config/emailjs'
 
 export interface ContactFormData {
     firstName: string
@@ -12,8 +9,24 @@ export interface ContactFormData {
     message: string
 }
 
-export const sendEmail = async (formData: ContactFormData): Promise<boolean> => {
+export type SendEmailResult =
+    | { ok: true }
+    | { ok: false; reason: 'not_configured' | 'gmail_reconnect_required' | 'send_failed' }
+
+export const sendEmail = async (formData: ContactFormData): Promise<SendEmailResult> => {
     try {
+        if (!isEmailjsConfigured) {
+            console.error(
+                'EmailJS non configuré: créez un .env.local avec VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY.'
+            )
+            return { ok: false, reason: 'not_configured' }
+        }
+
+        const config = getEmailjsConfig()
+
+        // KISS: initialiser à chaque envoi (aucun état global)
+        emailjs.init(config.publicKey)
+
         const templateParams = {
             from_name: `${formData.firstName} ${formData.lastName}`,
             from_email: formData.email,
@@ -30,16 +43,28 @@ export const sendEmail = async (formData: ContactFormData): Promise<boolean> => 
         }
 
         const response = await emailjs.send(
-            emailjsConfig.serviceId,
-            emailjsConfig.templateId,
+            config.serviceId,
+            config.templateId,
             templateParams
         )
 
         console.log('Email envoyé avec succès:', response)
-        return true
+        return { ok: true }
     } catch (error) {
+        const errorMessage =
+            error instanceof Error
+                ? error.message
+                : typeof error === 'string'
+                    ? error
+                    : JSON.stringify(error)
+
         console.error('Erreur lors de l\'envoi de l\'email:', error)
-        return false
+
+        if (/invalid\s*grant/i.test(errorMessage) || /gmail_api/i.test(errorMessage)) {
+            return { ok: false, reason: 'gmail_reconnect_required' }
+        }
+
+        return { ok: false, reason: 'send_failed' }
     }
 }
 

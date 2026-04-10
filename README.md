@@ -374,6 +374,9 @@ export const EMAILJS_CONFIG = {
 ### Environment Variables (Optional)
 
 ```bash
+# Recommended: copy .env.example to .env.local
+# cp .env.example .env.local
+
 # .env.local
 VITE_EMAILJS_SERVICE_ID=your_service_id
 VITE_EMAILJS_TEMPLATE_ID=your_template_id

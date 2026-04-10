@@ -40,7 +40,7 @@ export class SmoothNavigation {
     
     animatedElements.forEach((element) => {
       // Force un reflow pour précharger les styles
-      window.getComputedStyle(element).opacity;
+      void window.getComputedStyle(element).opacity;
     });
   }
 

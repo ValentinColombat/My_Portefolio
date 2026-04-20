@@ -1,7 +1,6 @@
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import persoImg from '../assets/portfolio_us.webp';
 
-
 const About = () => {
     const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
 
@@ -36,19 +35,25 @@ const About = () => {
 
                     <div className="space-y-5 text-gray-600 leading-relaxed mb-10">
                         <p>
-                            Kodo n'a pas été invité. Il est simplement apparu un soir, sur le coin du bureau, et a décidé que
-                            <strong className="text-gray-900"> c'était là qu'il vivrait.</strong>
+                            Kodo n'a pas été invité. Il est simplement apparu un soir, sur le coin du bureau, et a décidé que c'était là qu'il vivrait.
                         </p>
                         <p>
                             Depuis, il supervise. Les deadlines, les cafés froids, les idées abandonnées à 23h.
-                            Il ne dit rien. Mais quand il pose son menton sur le bras de Valentin,
-                            <strong className="text-gray-900"> c'est presque toujours au bon moment.</strong>
+                            Il ne tape pas une ligne. Mais il sait toujours où poser la tête pour bloquer la souris au bon moment.
+                        </p>
+                        <p>
+                            Valentin, lui, construit. <strong className="text-gray-900">Des interfaces, des automatisations, des outils qui font gagner du temps.</strong>
+                            Il cherche à comprendre les problèmes avant de les résoudre, et à ne livrer que ce qui sert vraiment,
+                            sans superflu.
+                        </p>
+                        <p>
+                            C'est une équipe qu'on n'aurait pas prévue. L'un résout des problèmes, l'autre en crée, surtout quand il décide de dormir sur le clavier.
+                            Il ne sait pas ce qu'est un bug. Mais il sait poser sa tête au bon endroit, au bon moment. Ce n'est pas rien.
                         </p>
                         <p className="text-amber-600 font-medium italic border-l-2 border-amber-400 pl-4">
                             Si un jour vous travaillez avec Valentin et que vous avez un peu de chance... peut-être que vous l'apercevrez.
                         </p>
                     </div>
-
                 </div>
 
             </div>

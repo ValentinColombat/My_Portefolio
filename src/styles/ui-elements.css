@@ -240,6 +240,42 @@
     transform: translateY(-1px);
 }
 
+/* === BOUTON BACK TO TOP === */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #0a0a0b;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: #f59e0b;
+    color: #0a0a0b;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    transform: translateY(-2px);
+}
+
 /* === BADGES === */
 .badge-modern {
     background: rgba(245, 158, 11, 0.12);

@@ -1,5 +1,4 @@
 import { Linkedin, Twitter, Youtube, GitBranch, PackageCheck } from "lucide-react"
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 
 const socialLinks = [
     { icon: Twitter, url: 'https://x.com/ValentinCo66146', label: 'Twitter' },
@@ -10,12 +9,8 @@ const socialLinks = [
 ]
 
 const Footer = () => {
-    const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2, triggerOnce: true })
-
     return (
         <footer
-            ref={elementRef}
-            className={`slide-in-bottom ${isVisible ? 'visible' : ''}`}
             style={{ backgroundColor: '#D4920A', color: '#1A1A1A' }}
         >
             <div className="px-5 md:px-[12%] py-12">

@@ -16,6 +16,7 @@ import TechBanner from "./components/TechBanner";
 import Contact from "./components/Contact";
 import ProjectDetail from "./components/ProjectDetail";
 import ProjectDetailPortfolio from "./components/ProjectDetailPortfolio";
+import BackToTop from "./components/BackToTop";
 
 // Page d'accueil (portfolio complet)
 function HomePage() {
@@ -29,13 +30,13 @@ function HomePage() {
 
       {/* Sections */}
       <div className="section-white">
-        <div className="px-5 md:px-[12%] pt-2 pb-2">
-          <Projects />
-        </div>
+        <About />
       </div>
       <CTASection />
       <div className="section-white">
-        <About />
+        <div className="px-5 md:px-[12%] pt-2 pb-2">
+          <Projects />
+        </div>
       </div>
       <Footer />
     </div>
@@ -46,6 +47,7 @@ export default function App() {
   return (
     <LoadingProvider>
       <ScrollToTop />
+      <BackToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/contact" element={<Contact />} />
